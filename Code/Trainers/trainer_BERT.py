@@ -26,13 +26,18 @@ def train(model, data_loader, test_loader, criterion, optimizer, lr_scheduler, m
             '''
             Compute output and loss from BERT
             '''
-            loss, logits = model(input_ids, 
+
+
+
+            outputs = model(input_ids,
                              token_type_ids=None, 
                              attention_mask=attention_masks, 
                              labels=target
                                 )
 
-                   
+            loss = outputs.loss
+            logits = outputs.logits
+
             '''
             Take Step
             '''                    
@@ -55,8 +60,8 @@ def train(model, data_loader, test_loader, criterion, optimizer, lr_scheduler, m
             lr_scheduler.step()
             
                         
-            if batch_num % 100 == 99:
-                print('loss', avg_loss/100)
+            # if batch_num % 100 == 99:
+            #     print('loss', avg_loss/100)
                 
             del feats
             del captions
@@ -122,10 +127,14 @@ def test_classify(model, test_loader, criterion, device):
         '''
         Compute output and loss from BERT
         '''
-        loss, logits = model(input_ids, 
+        outputs = model(input_ids,
                          token_type_ids=None, 
                          attention_mask=attention_masks, 
                          labels=target)
+
+        loss = outputs.loss
+        logits = outputs.logits
+
 
         test_loss.extend([loss.item()]*feats.size()[0])
         

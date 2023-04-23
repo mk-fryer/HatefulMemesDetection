@@ -68,7 +68,10 @@ class mydataset(Dataset):
         image = self.X[index]
                 
         image = (Image.open(image))
-               
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
+
         image = self.transform(image)
         
         label = float(self.Y[index])
@@ -189,13 +192,13 @@ class mytestdataset(Dataset):
         '''
         Image Transforms
         '''
-        self.transform = transforms.Compose([   transforms.Resize(256),
-                                                transforms.CenterCrop(224),
-                                                transforms.ToTensor(),
-                                                transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                                                     std=[0.229, 0.224, 0.225])
-                                            ])
-         
+        self.transform = transforms.Compose([transforms.Resize(256),
+                                             transforms.CenterCrop(224),
+                                             transforms.ToTensor(),
+                                             transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                                                  std=[0.229, 0.224, 0.225])
+                                             ])
+
     
     def __getitem__(self,index):
         
@@ -204,9 +207,11 @@ class mytestdataset(Dataset):
         Image
         '''
         image = self.X[index]
-                
+
         image = (Image.open(image))
-               
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
         image = self.transform(image)
         
        
@@ -225,23 +230,12 @@ class mytestdataset(Dataset):
         return len(self.X)
     
 
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
        
 '''
 Dataloader for Training/Validation with support for Image Captioning model
 Returns (Image, Caption, Input_id, Attention_mask, Input_id_Captioning_model, Attention_mask_Captioning_model, label)
 '''
-class mydataset_captioning():    
+class mydataset_captioning(Dataset):
 
     def __init__(self, annotations_file, img_dir, name):
 
@@ -255,10 +249,10 @@ class mydataset_captioning():
         with open(annotations_file, mode = 'r') as f:
 
             for line in f:
-                
+                img_ann = json.loads(line)
                 path, caption, generated_caption, label = line[:-1].split('\t')
 
-                self.X.append('/home/ironman/abhishek/GBM/FB/Code/data/'+path)
+                self.X.append(f"{img_dir}/{img_ann['img']}")
                 self.true_Cap.append(caption)
                 self.generated_Cap.append(generated_caption)
                 self.Y.append(label)
@@ -302,7 +296,9 @@ class mydataset_captioning():
         image = self.X[index]
                 
         image = (Image.open(image))
-               
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
         image = self.transform(image)
         
         label = float(self.Y[index])

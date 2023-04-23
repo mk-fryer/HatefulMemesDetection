@@ -77,6 +77,9 @@ class mydataset():
         image = self.X[index]
                 
         image = (Image.open(image))
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
                
         image = self.transform(image)
         
@@ -241,6 +244,9 @@ class mytestdataset():
         image = self.X[index]
                 
         image = (Image.open(image))
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
                
         image = self.transform(image)
         
@@ -351,7 +357,9 @@ class mydataset_captioning():
         image = self.X[index]
                 
         image = (Image.open(image))
-               
+        if (np.array(image).shape)[2]==4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
         image = self.transform(image)
         
         label = float(self.Y[index])
