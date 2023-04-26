@@ -245,17 +245,18 @@ class mydataset_captioning(Dataset):
         self.true_Cap = []
         self.generated_Cap = []
         self.Y = []
+        self.Imagename = []
         
         with open(annotations_file, mode = 'r') as f:
 
             for line in f:
                 img_ann = json.loads(line)
-                path, caption, generated_caption, label = line[:-1].split('\t')
+                # path, caption, generated_caption, label = line[:-1].split('\t')
 
                 self.X.append(f"{img_dir}/{img_ann['img']}")
-                self.true_Cap.append(caption)
-                self.generated_Cap.append(generated_caption)
-                self.Y.append(label)
+                self.true_Cap.append(img_ann['text'])
+                self.generated_Cap.append(img_ann['generated_caption'])
+                self.Y.append(img_ann['label'])
         
         '''
         Tokenize all of the captions and map the tokens to thier word IDs, and get respective attention masks.
@@ -313,9 +314,7 @@ class mydataset_captioning(Dataset):
             
         input_id_cap = self.input_ids_cap[index]
         attention_masks_cap = self.attention_masks_cap[index]
-    
-            
-            
+
         return image, caption, input_id, attention_masks, input_id_cap, attention_masks_cap, torch.as_tensor(label).long()
         
   

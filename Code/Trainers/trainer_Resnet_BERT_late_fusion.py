@@ -133,6 +133,9 @@ Returns Loss and top1 accuracy on test/validation set
 def test_classify(image_model, text_model, fusion_model, test_loader, criterion, device):
     fusion_model.eval()
     test_loss = []
+    predicted_label = []
+    prediction_probs = []
+    original_label = []
     top1_accuracy = 0
     total = 0
 
@@ -178,9 +181,11 @@ def test_classify(image_model, text_model, fusion_model, test_loader, criterion,
         
         predictions = F.softmax(output, dim=1)
         
-        _, top1_pred_labels = torch.max(predictions,1)
+        probs, top1_pred_labels = torch.max(predictions,1)
         top1_pred_labels = top1_pred_labels.view(-1)
-        
+        predicted_label.extend(top1_pred_labels.tolist())
+        original_label.extend(target.tolist())
+        prediction_probs.extend(probs.tolist())
         top1_accuracy += torch.sum(torch.eq(top1_pred_labels, target)).item()
         
         
@@ -194,4 +199,4 @@ def test_classify(image_model, text_model, fusion_model, test_loader, criterion,
         del loss
             
     fusion_model.train()
-    return np.mean(test_loss), top1_accuracy/total
+    return np.mean(test_loss), top1_accuracy/total, original_label, predicted_label, prediction_probs
