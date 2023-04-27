@@ -89,10 +89,75 @@ class mydataset(Dataset):
   
     def __len__(self):
         return len(self.X)
-    
-    
-    
-    
+
+
+class mycapdataset(Dataset):
+
+    def __init__(self, annotations_file, img_dir, name):
+        self.X = []
+        self.Cap = []
+        self.Y = []
+
+        with open(annotations_file, mode='r') as f:
+
+            for line in f:
+                img_ann = json.loads(line)
+                self.X.append(f"{img_dir}/{img_ann['img']}")
+                self.Cap.append(img_ann['text'] + ' ' + img_ann['generated_caption'] )
+                self.Y.append(img_ann['label'])
+
+        '''
+        Tokenize all of the captions and map the tokens to thier word IDs, and get respective attention masks.
+        '''
+        self.input_ids, self.attention_masks = tokenize(self.Cap)
+
+        '''
+        Image Transforms
+        '''
+
+        if name in ['valid', 'test']:
+            self.transform = transforms.Compose([transforms.Resize(384),
+                                                 transforms.CenterCrop(256),
+                                                 transforms.ToTensor(),
+                                                 transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                                                      std=[0.229, 0.224, 0.225])
+                                                 ])
+        else:
+            self.transform = transforms.Compose([transforms.Resize(256),
+                                                 transforms.RandomCrop(224),
+                                                 transforms.RandomHorizontalFlip(),
+                                                 transforms.ToTensor(),
+                                                 transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                                                      std=[0.229, 0.224, 0.225])
+                                                 ])
+
+    def __getitem__(self, index):
+
+        '''
+        For Image and Label
+        '''
+        image = self.X[index]
+
+        image = (Image.open(image))
+        if (np.array(image).shape)[2] == 4:
+            # print(np.array(image).shape)
+            image = image.convert('RGB')
+
+        image = self.transform(image)
+
+        label = float(self.Y[index])
+
+        '''
+        For Captions, Input ids and Attention mask
+        '''
+        caption = self.Cap[index]
+        input_id = self.input_ids[index]
+        attention_masks = self.attention_masks[index]
+
+        return image, caption, input_id, attention_masks, torch.as_tensor(label).long()
+
+    def __len__(self):
+        return len(self.X)
     
     
     
@@ -120,7 +185,7 @@ def tokenize(sequences):
         encoded_dict = tokenizer.encode_plus(
                             seq,                       # Sentence to encode.
                             add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 48,           # Pad & truncate all sentences.
+                            max_length = 512,           # Pad & truncate all sentences.
                             truncation=True,
                             pad_to_max_length = True,
                             return_attention_mask = True,   # Construct attn. masks.

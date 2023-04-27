@@ -216,11 +216,16 @@ def test_classify(image_model, text_model, fusion_model, test_loader, criterion,
         predicted_label.extend(top1_pred_labels.tolist())
         original_label.extend(target.tolist())
         prediction_probs.extend(probs.tolist())
-        
+
+        # print(probs)
+        # print(top1_pred_labels.tolist())
+        # print(target.tolist())
+
         top1_accuracy += torch.sum(torch.eq(top1_pred_labels, target)).item()
-        
+        # print(top1_accuracy)
         
         total += len(target)
+        # print(total)
         
         del feats
         del captions

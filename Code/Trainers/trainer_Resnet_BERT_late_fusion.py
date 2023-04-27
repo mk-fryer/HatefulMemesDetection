@@ -99,7 +99,7 @@ def train(image_model,text_model,fusion_model,data_loader,test_loader,criterion,
         Check performance on validation set after an Epoch
         '''
         
-        valid_loss, top1_acc= test_classify(image_model, text_model, fusion_model, test_loader, criterion, device)
+        valid_loss, top1_acc,_,_,_= test_classify(image_model, text_model, fusion_model, test_loader, criterion, device)
         print('Validation Loss: {:.4f}\tTop 1 Validation Accuracy: {:.4f}'.format(valid_loss, top1_acc))
         v_loss.append(valid_loss)
         v_acc.append(top1_acc)
