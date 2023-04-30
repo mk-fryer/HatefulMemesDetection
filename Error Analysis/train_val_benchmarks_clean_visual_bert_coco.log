@@ -1,0 +1,876 @@
+2023-04-25 02:57:50.459086: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-04-25 02:57:50.514554: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-25 02:57:51.397677: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_TENSORBOARD_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option config to projects/visual_bert/configs/hateful_memes/from_coco.yaml
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option model to visual_bert
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option datasets to hateful_memes
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option run_type to train_val
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.train[0] to hateful_memes/defaults/annotations/train.jsonl
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.val[0] to hateful_memes/defaults/annotations/dev.jsonl
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.test[0] to hateful_memes/defaults/annotations/test.jsonl
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.batch_size to 32
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.tensorboard to True
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option env.tensorboard_logdir to logs/fit/
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.checkpoint_interval to 100
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.evaluation_interval to 100
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option checkpoint.max_to_keep to 1
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.max_updates to 3000
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.log_interval to 100
+2023-04-25T02:58:29 | mmf.utils.configuration: Overriding option training.lr_ratio to 0.3
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_LOG_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_REPORT_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_WANDB_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-25T02:58:29 | mmf: Logging to: ./save/train.log
+2023-04-25T02:58:30 | mmf_cli.run: Namespace(config_override=None, local_rank=None, opts=['config=projects/visual_bert/configs/hateful_memes/from_coco.yaml', 'model=visual_bert', 'dataset=hateful_memes', 'run_type=train_val', 'dataset_config.hateful_memes.annotations.train[0]=hateful_memes/defaults/annotations/train.jsonl', 'dataset_config.hateful_memes.annotations.val[0]=hateful_memes/defaults/annotations/dev.jsonl', 'dataset_config.hateful_memes.annotations.test[0]=hateful_memes/defaults/annotations/test.jsonl', 'training.batch_size=32', 'training.tensorboard=True', 'env.tensorboard_logdir=logs/fit/', 'training.checkpoint_interval=100', 'training.evaluation_interval=100', 'checkpoint.max_to_keep=1', 'training.max_updates=3000', 'training.log_interval=100', 'training.lr_ratio=0.3'])
+2023-04-25T02:58:30 | mmf_cli.run: Torch version: 2.0.0+cu118
+2023-04-25T02:58:30 | mmf.utils.general: CUDA Device 0 is: NVIDIA A100-SXM4-40GB
+2023-04-25T02:58:30 | mmf_cli.run: Using seed 29109978
+2023-04-25T02:58:30 | mmf.trainers.mmf_trainer: Loading datasets
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/features/features_2020_10_01.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/features/features.tar.gz ]
+Downloading features.tar.gz: 100% 10.3G/10.3G [00:57<00:00, 178MB/s]
+[ Starting checksum for features.tar.gz]
+[ Checksum successful for features.tar.gz]
+Unpacking features.tar.gz
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz ]
+Downloading extras.tar.gz: 100% 211k/211k [00:00<00:00, 411kB/s]
+[ Starting checksum for extras.tar.gz]
+[ Checksum successful for extras.tar.gz]
+Unpacking extras.tar.gz
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpsi0jdzul
+Downloading: 100% 28.0/28.0 [00:00<00:00, 23.4kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+creating metadata file for /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+https://huggingface.co/bert-base-uncased/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpxzjs7_vo
+Downloading: 100% 570/570 [00:00<00:00, 511kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+creating metadata file for /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmplo02liyx
+Downloading: 100% 232k/232k [00:00<00:00, 6.60MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt in cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+creating metadata file for /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpxczcc_u4
+Downloading: 100% 466k/466k [00:00<00:00, 6.14MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json in cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+creating metadata file for /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt from cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json from cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/added_tokens.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/special_tokens_map.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+2023-04-25T03:03:26 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-25T03:03:26 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-25T03:03:26 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-25T03:03:26 | mmf.trainers.mmf_trainer: Loading model
+2023-04-25T03:03:26 | torch.distributed.nn.jit.instantiator: Created a temporary directory at /tmp/tmpqj5uy34g
+2023-04-25T03:03:26 | torch.distributed.nn.jit.instantiator: Writing /tmp/tmpqj5uy34g/_remote_module_non_scriptable.py
+Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "bert_model_name": "bert-base-uncased",
+  "bypass_transformer": false,
+  "classifier_dropout": null,
+  "embedding_strategy": "plain",
+  "finetune_lr_multiplier": 1,
+  "freeze_base": false,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "losses": [
+    "cross_entropy"
+  ],
+  "max_position_embeddings": 512,
+  "model": "visual_bert",
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "pooler_strategy": "default",
+  "position_embedding_type": "absolute",
+  "random_initialize": false,
+  "special_visual_initialize": true,
+  "training_head_type": "classification",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "visual_embedding_dim": 2048,
+  "vocab_size": 30522,
+  "zerobias": false
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/torch/mmf/distributed_-1/tmp3aw__z1w
+Downloading: 100% 440M/440M [00:04<00:00, 95.2MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin in cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+creating metadata file for /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+loading weights file https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin from cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing VisualBERTBase: ['cls.predictions.transform.LayerNorm.weight', 'cls.predictions.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing VisualBERTBase from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing VisualBERTBase from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.projection.weight', 'bert.embeddings.position_embeddings_visual.weight', 'bert.embeddings.projection.bias', 'bert.embeddings.token_type_embeddings_visual.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2023-04-25T03:03:49 | mmf.trainers.mmf_trainer: Loading optimizer
+2023-04-25T03:03:49 | mmf.trainers.mmf_trainer: Loading metrics
+2023-04-25T03:03:50 | mmf.utils.checkpoint: Loading checkpoint
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/models/visual_bert/visual_bert.pretrained.coco_train_val.tar.gz to /root/.cache/torch/mmf/data/models/visual_bert.pretrained.coco.defaults/visual_bert.pretrained.coco_train_val.tar.gz ]
+Downloading visual_bert.pretrained.coco_train_val.tar.gz: 100% 415M/415M [00:04<00:00, 89.1MB/s]
+[ Starting checksum for visual_bert.pretrained.coco_train_val.tar.gz]
+[ Checksum successful for visual_bert.pretrained.coco_train_val.tar.gz]
+Unpacking visual_bert.pretrained.coco_train_val.tar.gz
+WARNING 2023-04-25T03:04:00 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2023-04-25T03:04:00 | mmf: Key distributed is not present in registry, returning default value of None
+WARNING 2023-04-25T03:04:00 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2023-04-25T03:04:00 | mmf: Key distributed is not present in registry, returning default value of None
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.word_embeddings.weight from model.bert.embeddings.word_embeddings.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.position_embeddings.weight from model.bert.embeddings.position_embeddings.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.token_type_embeddings.weight from model.bert.embeddings.token_type_embeddings.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.LayerNorm.weight from model.bert.embeddings.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.LayerNorm.bias from model.bert.embeddings.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.token_type_embeddings_visual.weight from model.bert.embeddings.token_type_embeddings_visual.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.position_embeddings_visual.weight from model.bert.embeddings.position_embeddings_visual.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.projection.weight from model.bert.embeddings.projection.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.embeddings.projection.bias from model.bert.embeddings.projection.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.query.weight from model.bert.encoder.layer.0.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.query.bias from model.bert.encoder.layer.0.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.key.weight from model.bert.encoder.layer.0.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.key.bias from model.bert.encoder.layer.0.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.value.weight from model.bert.encoder.layer.0.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.value.bias from model.bert.encoder.layer.0.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.dense.weight from model.bert.encoder.layer.0.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.dense.bias from model.bert.encoder.layer.0.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.LayerNorm.weight from model.bert.encoder.layer.0.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.LayerNorm.bias from model.bert.encoder.layer.0.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.intermediate.dense.weight from model.bert.encoder.layer.0.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.intermediate.dense.bias from model.bert.encoder.layer.0.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.dense.weight from model.bert.encoder.layer.0.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.dense.bias from model.bert.encoder.layer.0.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.LayerNorm.weight from model.bert.encoder.layer.0.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.LayerNorm.bias from model.bert.encoder.layer.0.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.query.weight from model.bert.encoder.layer.1.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.query.bias from model.bert.encoder.layer.1.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.key.weight from model.bert.encoder.layer.1.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.key.bias from model.bert.encoder.layer.1.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.value.weight from model.bert.encoder.layer.1.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.value.bias from model.bert.encoder.layer.1.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.dense.weight from model.bert.encoder.layer.1.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.dense.bias from model.bert.encoder.layer.1.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.LayerNorm.weight from model.bert.encoder.layer.1.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.LayerNorm.bias from model.bert.encoder.layer.1.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.intermediate.dense.weight from model.bert.encoder.layer.1.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.intermediate.dense.bias from model.bert.encoder.layer.1.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.dense.weight from model.bert.encoder.layer.1.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.dense.bias from model.bert.encoder.layer.1.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.LayerNorm.weight from model.bert.encoder.layer.1.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.LayerNorm.bias from model.bert.encoder.layer.1.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.query.weight from model.bert.encoder.layer.2.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.query.bias from model.bert.encoder.layer.2.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.key.weight from model.bert.encoder.layer.2.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.key.bias from model.bert.encoder.layer.2.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.value.weight from model.bert.encoder.layer.2.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.value.bias from model.bert.encoder.layer.2.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.dense.weight from model.bert.encoder.layer.2.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.dense.bias from model.bert.encoder.layer.2.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.LayerNorm.weight from model.bert.encoder.layer.2.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.LayerNorm.bias from model.bert.encoder.layer.2.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.intermediate.dense.weight from model.bert.encoder.layer.2.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.intermediate.dense.bias from model.bert.encoder.layer.2.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.dense.weight from model.bert.encoder.layer.2.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.dense.bias from model.bert.encoder.layer.2.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.LayerNorm.weight from model.bert.encoder.layer.2.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.LayerNorm.bias from model.bert.encoder.layer.2.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.query.weight from model.bert.encoder.layer.3.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.query.bias from model.bert.encoder.layer.3.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.key.weight from model.bert.encoder.layer.3.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.key.bias from model.bert.encoder.layer.3.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.value.weight from model.bert.encoder.layer.3.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.value.bias from model.bert.encoder.layer.3.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.dense.weight from model.bert.encoder.layer.3.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.dense.bias from model.bert.encoder.layer.3.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.LayerNorm.weight from model.bert.encoder.layer.3.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.LayerNorm.bias from model.bert.encoder.layer.3.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.intermediate.dense.weight from model.bert.encoder.layer.3.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.intermediate.dense.bias from model.bert.encoder.layer.3.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.dense.weight from model.bert.encoder.layer.3.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.dense.bias from model.bert.encoder.layer.3.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.LayerNorm.weight from model.bert.encoder.layer.3.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.LayerNorm.bias from model.bert.encoder.layer.3.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.query.weight from model.bert.encoder.layer.4.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.query.bias from model.bert.encoder.layer.4.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.key.weight from model.bert.encoder.layer.4.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.key.bias from model.bert.encoder.layer.4.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.value.weight from model.bert.encoder.layer.4.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.value.bias from model.bert.encoder.layer.4.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.dense.weight from model.bert.encoder.layer.4.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.dense.bias from model.bert.encoder.layer.4.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.LayerNorm.weight from model.bert.encoder.layer.4.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.LayerNorm.bias from model.bert.encoder.layer.4.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.intermediate.dense.weight from model.bert.encoder.layer.4.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.intermediate.dense.bias from model.bert.encoder.layer.4.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.dense.weight from model.bert.encoder.layer.4.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.dense.bias from model.bert.encoder.layer.4.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.LayerNorm.weight from model.bert.encoder.layer.4.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.LayerNorm.bias from model.bert.encoder.layer.4.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.query.weight from model.bert.encoder.layer.5.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.query.bias from model.bert.encoder.layer.5.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.key.weight from model.bert.encoder.layer.5.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.key.bias from model.bert.encoder.layer.5.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.value.weight from model.bert.encoder.layer.5.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.value.bias from model.bert.encoder.layer.5.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.dense.weight from model.bert.encoder.layer.5.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.dense.bias from model.bert.encoder.layer.5.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.LayerNorm.weight from model.bert.encoder.layer.5.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.LayerNorm.bias from model.bert.encoder.layer.5.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.intermediate.dense.weight from model.bert.encoder.layer.5.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.intermediate.dense.bias from model.bert.encoder.layer.5.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.dense.weight from model.bert.encoder.layer.5.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.dense.bias from model.bert.encoder.layer.5.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.LayerNorm.weight from model.bert.encoder.layer.5.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.LayerNorm.bias from model.bert.encoder.layer.5.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.query.weight from model.bert.encoder.layer.6.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.query.bias from model.bert.encoder.layer.6.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.key.weight from model.bert.encoder.layer.6.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.key.bias from model.bert.encoder.layer.6.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.value.weight from model.bert.encoder.layer.6.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.value.bias from model.bert.encoder.layer.6.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.dense.weight from model.bert.encoder.layer.6.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.dense.bias from model.bert.encoder.layer.6.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.LayerNorm.weight from model.bert.encoder.layer.6.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.LayerNorm.bias from model.bert.encoder.layer.6.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.intermediate.dense.weight from model.bert.encoder.layer.6.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.intermediate.dense.bias from model.bert.encoder.layer.6.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.dense.weight from model.bert.encoder.layer.6.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.dense.bias from model.bert.encoder.layer.6.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.LayerNorm.weight from model.bert.encoder.layer.6.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.LayerNorm.bias from model.bert.encoder.layer.6.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.query.weight from model.bert.encoder.layer.7.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.query.bias from model.bert.encoder.layer.7.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.key.weight from model.bert.encoder.layer.7.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.key.bias from model.bert.encoder.layer.7.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.value.weight from model.bert.encoder.layer.7.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.value.bias from model.bert.encoder.layer.7.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.dense.weight from model.bert.encoder.layer.7.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.dense.bias from model.bert.encoder.layer.7.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.LayerNorm.weight from model.bert.encoder.layer.7.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.LayerNorm.bias from model.bert.encoder.layer.7.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.intermediate.dense.weight from model.bert.encoder.layer.7.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.intermediate.dense.bias from model.bert.encoder.layer.7.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.dense.weight from model.bert.encoder.layer.7.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.dense.bias from model.bert.encoder.layer.7.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.LayerNorm.weight from model.bert.encoder.layer.7.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.LayerNorm.bias from model.bert.encoder.layer.7.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.query.weight from model.bert.encoder.layer.8.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.query.bias from model.bert.encoder.layer.8.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.key.weight from model.bert.encoder.layer.8.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.key.bias from model.bert.encoder.layer.8.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.value.weight from model.bert.encoder.layer.8.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.value.bias from model.bert.encoder.layer.8.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.dense.weight from model.bert.encoder.layer.8.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.dense.bias from model.bert.encoder.layer.8.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.LayerNorm.weight from model.bert.encoder.layer.8.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.LayerNorm.bias from model.bert.encoder.layer.8.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.intermediate.dense.weight from model.bert.encoder.layer.8.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.intermediate.dense.bias from model.bert.encoder.layer.8.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.dense.weight from model.bert.encoder.layer.8.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.dense.bias from model.bert.encoder.layer.8.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.LayerNorm.weight from model.bert.encoder.layer.8.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.LayerNorm.bias from model.bert.encoder.layer.8.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.query.weight from model.bert.encoder.layer.9.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.query.bias from model.bert.encoder.layer.9.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.key.weight from model.bert.encoder.layer.9.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.key.bias from model.bert.encoder.layer.9.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.value.weight from model.bert.encoder.layer.9.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.value.bias from model.bert.encoder.layer.9.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.dense.weight from model.bert.encoder.layer.9.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.dense.bias from model.bert.encoder.layer.9.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.LayerNorm.weight from model.bert.encoder.layer.9.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.LayerNorm.bias from model.bert.encoder.layer.9.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.intermediate.dense.weight from model.bert.encoder.layer.9.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.intermediate.dense.bias from model.bert.encoder.layer.9.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.dense.weight from model.bert.encoder.layer.9.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.dense.bias from model.bert.encoder.layer.9.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.LayerNorm.weight from model.bert.encoder.layer.9.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.LayerNorm.bias from model.bert.encoder.layer.9.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.query.weight from model.bert.encoder.layer.10.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.query.bias from model.bert.encoder.layer.10.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.key.weight from model.bert.encoder.layer.10.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.key.bias from model.bert.encoder.layer.10.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.value.weight from model.bert.encoder.layer.10.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.value.bias from model.bert.encoder.layer.10.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.dense.weight from model.bert.encoder.layer.10.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.dense.bias from model.bert.encoder.layer.10.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.LayerNorm.weight from model.bert.encoder.layer.10.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.LayerNorm.bias from model.bert.encoder.layer.10.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.intermediate.dense.weight from model.bert.encoder.layer.10.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.intermediate.dense.bias from model.bert.encoder.layer.10.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.dense.weight from model.bert.encoder.layer.10.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.dense.bias from model.bert.encoder.layer.10.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.LayerNorm.weight from model.bert.encoder.layer.10.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.LayerNorm.bias from model.bert.encoder.layer.10.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.query.weight from model.bert.encoder.layer.11.attention.self.query.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.query.bias from model.bert.encoder.layer.11.attention.self.query.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.key.weight from model.bert.encoder.layer.11.attention.self.key.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.key.bias from model.bert.encoder.layer.11.attention.self.key.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.value.weight from model.bert.encoder.layer.11.attention.self.value.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.value.bias from model.bert.encoder.layer.11.attention.self.value.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.dense.weight from model.bert.encoder.layer.11.attention.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.dense.bias from model.bert.encoder.layer.11.attention.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.LayerNorm.weight from model.bert.encoder.layer.11.attention.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.LayerNorm.bias from model.bert.encoder.layer.11.attention.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.intermediate.dense.weight from model.bert.encoder.layer.11.intermediate.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.intermediate.dense.bias from model.bert.encoder.layer.11.intermediate.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.dense.weight from model.bert.encoder.layer.11.output.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.dense.bias from model.bert.encoder.layer.11.output.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.LayerNorm.weight from model.bert.encoder.layer.11.output.LayerNorm.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.LayerNorm.bias from model.bert.encoder.layer.11.output.LayerNorm.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.pooler.dense.weight from model.bert.pooler.dense.weight
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Copying model.bert.pooler.dense.bias from model.bert.pooler.dense.bias
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Pretrained model loaded
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Checkpoint loaded.
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Current num updates: 0
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Current iteration: 0
+2023-04-25T03:04:00 | mmf.utils.checkpoint: Current epoch: 0
+2023-04-25T03:04:00 | mmf.trainers.mmf_trainer: ===== Model =====
+2023-04-25T03:04:00 | mmf.trainers.mmf_trainer: VisualBERT(
+  (model): VisualBERTForClassification(
+    (bert): VisualBERTBase(
+      (embeddings): BertVisioLinguisticEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (token_type_embeddings_visual): Embedding(2, 768)
+        (position_embeddings_visual): Embedding(512, 768)
+        (projection): Linear(in_features=2048, out_features=768, bias=True)
+      )
+      (encoder): BertEncoderJit(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (classifier): Sequential(
+      (0): BertPredictionHeadTransform(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      )
+      (1): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+  (losses): Losses(
+    (losses): ModuleList(
+      (0): MMFLoss(
+        (loss_criterion): CrossEntropyLoss(
+          (loss_fn): CrossEntropyLoss()
+        )
+      )
+    )
+  )
+)
+2023-04-25T03:04:00 | mmf.utils.general: Total Parameters: 112044290. Trained Parameters: 112044290
+2023-04-25T03:04:00 | mmf.trainers.core.training_loop: Starting training...
+2023-04-25T03:04:38 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:04:38 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:07:24 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:07:41 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:07:44 | mmf.trainers.callbacks.logistics: progress: 100/3000, train/hateful_memes/cross_entropy: 0.6827, train/hateful_memes/cross_entropy/avg: 0.6827, train/total_loss: 0.6827, train/total_loss/avg: 0.6827, max mem: 7879.0, experiment: run, epoch: 1, num_updates: 100, iterations: 100, max_updates: 3000, lr: 0., ups: 0.45, time: 03m 41s 070ms, time_since_start: 03m 51s 439ms, eta: 02h 03m 56s 797ms
+2023-04-25T03:07:44 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:07:44 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:07:46 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:07:46 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:07:46 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:07:50 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:08:05 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:08:09 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:08:09 | mmf.trainers.callbacks.logistics: progress: 100/3000, val/hateful_memes/cross_entropy: 0.7392, val/total_loss: 0.7392, val/hateful_memes/accuracy: 0.5060, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.4950, num_updates: 100, epoch: 1, iterations: 100, max_updates: 3000, val_time: 24s 520ms, best_update: 100, best_iteration: 100, best_val/hateful_memes/roc_auc: 0.494967
+2023-04-25T03:08:42 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:08:42 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:08:46 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:08:51 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:08:51 | mmf.trainers.callbacks.logistics: progress: 200/3000, train/hateful_memes/cross_entropy: 0.6827, train/hateful_memes/cross_entropy/avg: 0.6947, train/total_loss: 0.6827, train/total_loss/avg: 0.6947, max mem: 7905.0, experiment: run, epoch: 1, num_updates: 200, iterations: 200, max_updates: 3000, lr: 0.00001, ups: 2.38, time: 42s 442ms, time_since_start: 05m 974ms, eta: 22m 58s 546ms
+2023-04-25T03:08:51 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:08:51 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:08:53 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:08:53 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:08:53 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:08:57 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:09:00 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:09:07 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:09:07 | mmf.trainers.callbacks.logistics: progress: 200/3000, val/hateful_memes/cross_entropy: 0.7392, val/total_loss: 0.7392, val/hateful_memes/accuracy: 0.5060, val/hateful_memes/binary_f1: 0.0000, val/hateful_memes/roc_auc: 0.5326, num_updates: 200, epoch: 1, iterations: 200, max_updates: 3000, val_time: 15s 512ms, best_update: 200, best_iteration: 200, best_val/hateful_memes/roc_auc: 0.532573
+2023-04-25T03:09:40 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:09:40 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:09:44 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:09:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:09:47 | mmf.trainers.callbacks.logistics: progress: 300/3000, train/hateful_memes/cross_entropy: 0.6827, train/hateful_memes/cross_entropy/avg: 0.6789, train/total_loss: 0.6827, train/total_loss/avg: 0.6789, max mem: 7907.0, experiment: run, epoch: 2, num_updates: 300, iterations: 300, max_updates: 3000, lr: 0.00001, ups: 2.50, time: 40s 878ms, time_since_start: 05m 57s 367ms, eta: 21m 20s 314ms
+2023-04-25T03:09:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:09:47 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:09:49 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:09:49 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:09:49 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:09:55 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:09:59 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:10:04 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:10:04 | mmf.trainers.callbacks.logistics: progress: 300/3000, val/hateful_memes/cross_entropy: 0.7425, val/total_loss: 0.7425, val/hateful_memes/accuracy: 0.5540, val/hateful_memes/binary_f1: 0.3573, val/hateful_memes/roc_auc: 0.5902, num_updates: 300, epoch: 2, iterations: 300, max_updates: 3000, val_time: 16s 545ms, best_update: 300, best_iteration: 300, best_val/hateful_memes/roc_auc: 0.590181
+2023-04-25T03:10:38 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:10:38 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:10:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:10:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:10:47 | mmf.trainers.callbacks.logistics: progress: 400/3000, train/hateful_memes/cross_entropy: 0.6472, train/hateful_memes/cross_entropy/avg: 0.6566, train/total_loss: 0.6472, train/total_loss/avg: 0.6566, max mem: 7907.0, experiment: run, epoch: 2, num_updates: 400, iterations: 400, max_updates: 3000, lr: 0.00001, ups: 2.38, time: 42s 573ms, time_since_start: 06m 56s 489ms, eta: 21m 24s 027ms
+2023-04-25T03:10:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:10:47 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:10:49 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:10:49 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:10:49 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:10:53 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:10:56 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:11:01 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:11:01 | mmf.trainers.callbacks.logistics: progress: 400/3000, val/hateful_memes/cross_entropy: 0.7115, val/total_loss: 0.7115, val/hateful_memes/accuracy: 0.5680, val/hateful_memes/binary_f1: 0.4433, val/hateful_memes/roc_auc: 0.6374, num_updates: 400, epoch: 2, iterations: 400, max_updates: 3000, val_time: 13s 990ms, best_update: 400, best_iteration: 400, best_val/hateful_memes/roc_auc: 0.637420
+2023-04-25T03:11:34 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:11:34 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:11:38 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:11:42 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:11:42 | mmf.trainers.callbacks.logistics: progress: 500/3000, train/hateful_memes/cross_entropy: 0.6472, train/hateful_memes/cross_entropy/avg: 0.6508, train/total_loss: 0.6472, train/total_loss/avg: 0.6508, max mem: 7907.0, experiment: run, epoch: 2, num_updates: 500, iterations: 500, max_updates: 3000, lr: 0.00001, ups: 2.44, time: 41s 196ms, time_since_start: 07m 51s 678ms, eta: 19m 54s 685ms
+2023-04-25T03:11:42 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:11:42 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:11:44 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:11:44 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:11:44 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:11:48 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:11:54 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:11:59 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:11:59 | mmf.trainers.callbacks.logistics: progress: 500/3000, val/hateful_memes/cross_entropy: 0.7934, val/total_loss: 0.7934, val/hateful_memes/accuracy: 0.5940, val/hateful_memes/binary_f1: 0.4082, val/hateful_memes/roc_auc: 0.6665, num_updates: 500, epoch: 2, iterations: 500, max_updates: 3000, val_time: 16s 849ms, best_update: 500, best_iteration: 500, best_val/hateful_memes/roc_auc: 0.666464
+2023-04-25T03:12:32 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:12:32 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:12:36 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:12:41 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:12:41 | mmf.trainers.callbacks.logistics: progress: 600/3000, train/hateful_memes/cross_entropy: 0.6276, train/hateful_memes/cross_entropy/avg: 0.6088, train/total_loss: 0.6276, train/total_loss/avg: 0.6088, max mem: 7907.0, experiment: run, epoch: 3, num_updates: 600, iterations: 600, max_updates: 3000, lr: 0.00002, ups: 2.38, time: 42s 866ms, time_since_start: 08m 51s 396ms, eta: 19m 53s 392ms
+2023-04-25T03:12:41 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:12:41 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:12:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:12:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:12:44 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:12:48 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:12:51 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:12:55 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:12:55 | mmf.trainers.callbacks.logistics: progress: 600/3000, val/hateful_memes/cross_entropy: 0.7779, val/total_loss: 0.7779, val/hateful_memes/accuracy: 0.6000, val/hateful_memes/binary_f1: 0.5050, val/hateful_memes/roc_auc: 0.6842, num_updates: 600, epoch: 3, iterations: 600, max_updates: 3000, val_time: 13s 558ms, best_update: 600, best_iteration: 600, best_val/hateful_memes/roc_auc: 0.684162
+2023-04-25T03:13:29 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:13:29 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:13:35 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:13:38 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:13:38 | mmf.trainers.callbacks.logistics: progress: 700/3000, train/hateful_memes/cross_entropy: 0.6276, train/hateful_memes/cross_entropy/avg: 0.5672, train/total_loss: 0.6276, train/total_loss/avg: 0.5672, max mem: 7907.0, experiment: run, epoch: 3, num_updates: 700, iterations: 700, max_updates: 3000, lr: 0.00002, ups: 2.33, time: 43s 287ms, time_since_start: 09m 48s 247ms, eta: 19m 14s 914ms
+2023-04-25T03:13:38 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:13:38 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:13:40 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:13:40 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:13:40 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:13:44 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:13:49 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:13:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:13:53 | mmf.trainers.callbacks.logistics: progress: 700/3000, val/hateful_memes/cross_entropy: 0.9695, val/total_loss: 0.9695, val/hateful_memes/accuracy: 0.5960, val/hateful_memes/binary_f1: 0.3988, val/hateful_memes/roc_auc: 0.7121, num_updates: 700, epoch: 3, iterations: 700, max_updates: 3000, val_time: 14s 691ms, best_update: 700, best_iteration: 700, best_val/hateful_memes/roc_auc: 0.712087
+2023-04-25T03:14:27 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:14:27 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:14:30 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:14:35 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:14:35 | mmf.trainers.callbacks.logistics: progress: 800/3000, train/hateful_memes/cross_entropy: 0.5897, train/hateful_memes/cross_entropy/avg: 0.5332, train/total_loss: 0.5897, train/total_loss/avg: 0.5332, max mem: 7907.0, experiment: run, epoch: 4, num_updates: 800, iterations: 800, max_updates: 3000, lr: 0.00002, ups: 2.38, time: 42s 421ms, time_since_start: 10m 45s 362ms, eta: 18m 02s 599ms
+2023-04-25T03:14:35 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:14:35 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:14:37 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:14:37 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:14:37 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:14:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:14:45 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:14:45 | mmf.trainers.callbacks.logistics: progress: 800/3000, val/hateful_memes/cross_entropy: 0.9433, val/total_loss: 0.9433, val/hateful_memes/accuracy: 0.6100, val/hateful_memes/binary_f1: 0.4315, val/hateful_memes/roc_auc: 0.7097, num_updates: 800, epoch: 4, iterations: 800, max_updates: 3000, val_time: 09s 463ms, best_update: 700, best_iteration: 700, best_val/hateful_memes/roc_auc: 0.712087
+2023-04-25T03:15:19 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:15:19 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:15:22 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:15:25 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:15:25 | mmf.trainers.callbacks.logistics: progress: 900/3000, train/hateful_memes/cross_entropy: 0.5897, train/hateful_memes/cross_entropy/avg: 0.4938, train/total_loss: 0.5897, train/total_loss/avg: 0.4938, max mem: 7907.0, experiment: run, epoch: 4, num_updates: 900, iterations: 900, max_updates: 3000, lr: 0.00002, ups: 2.50, time: 40s 579ms, time_since_start: 11m 35s 407ms, eta: 16m 28s 517ms
+2023-04-25T03:15:25 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:15:25 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:15:28 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:15:28 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:15:28 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:15:32 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:15:40 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:15:40 | mmf.trainers.callbacks.logistics: progress: 900/3000, val/hateful_memes/cross_entropy: 1.6214, val/total_loss: 1.6214, val/hateful_memes/accuracy: 0.5680, val/hateful_memes/binary_f1: 0.2703, val/hateful_memes/roc_auc: 0.7091, num_updates: 900, epoch: 4, iterations: 900, max_updates: 3000, val_time: 14s 258ms, best_update: 700, best_iteration: 700, best_val/hateful_memes/roc_auc: 0.712087
+2023-04-25T03:16:15 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:16:15 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:16:18 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:16:22 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:16:22 | mmf.trainers.callbacks.logistics: progress: 1000/3000, train/hateful_memes/cross_entropy: 0.3990, train/hateful_memes/cross_entropy/avg: 0.4823, train/total_loss: 0.3990, train/total_loss/avg: 0.4823, max mem: 7907.0, experiment: run, epoch: 4, num_updates: 1000, iterations: 1000, max_updates: 3000, lr: 0.00003, ups: 2.44, time: 41s 943ms, time_since_start: 12m 31s 611ms, eta: 16m 13s 087ms
+2023-04-25T03:16:22 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:16:22 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:16:24 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:16:24 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:16:24 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:16:28 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:16:31 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:16:36 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:16:36 | mmf.trainers.callbacks.logistics: progress: 1000/3000, val/hateful_memes/cross_entropy: 0.9081, val/total_loss: 0.9081, val/hateful_memes/accuracy: 0.6380, val/hateful_memes/binary_f1: 0.5041, val/hateful_memes/roc_auc: 0.7354, num_updates: 1000, epoch: 4, iterations: 1000, max_updates: 3000, val_time: 14s 608ms, best_update: 1000, best_iteration: 1000, best_val/hateful_memes/roc_auc: 0.735354
+2023-04-25T03:17:10 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:17:10 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:17:14 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:17:17 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:17:17 | mmf.trainers.callbacks.logistics: progress: 1100/3000, train/hateful_memes/cross_entropy: 0.3990, train/hateful_memes/cross_entropy/avg: 0.4635, train/total_loss: 0.3990, train/total_loss/avg: 0.4635, max mem: 7907.0, experiment: run, epoch: 5, num_updates: 1100, iterations: 1100, max_updates: 3000, lr: 0.00003, ups: 2.50, time: 40s 903ms, time_since_start: 13m 27s 126ms, eta: 15m 01s 522ms
+2023-04-25T03:17:17 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:17:17 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:17:19 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:17:19 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:17:19 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:17:23 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:17:29 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:17:29 | mmf.trainers.callbacks.logistics: progress: 1100/3000, val/hateful_memes/cross_entropy: 1.0919, val/total_loss: 1.0919, val/hateful_memes/accuracy: 0.6100, val/hateful_memes/binary_f1: 0.4248, val/hateful_memes/roc_auc: 0.7240, num_updates: 1100, epoch: 5, iterations: 1100, max_updates: 3000, val_time: 11s 528ms, best_update: 1000, best_iteration: 1000, best_val/hateful_memes/roc_auc: 0.735354
+2023-04-25T03:18:02 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:18:02 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:18:06 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:18:09 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:18:09 | mmf.trainers.callbacks.logistics: progress: 1200/3000, train/hateful_memes/cross_entropy: 0.3784, train/hateful_memes/cross_entropy/avg: 0.4390, train/total_loss: 0.3784, train/total_loss/avg: 0.4390, max mem: 7907.0, experiment: run, epoch: 5, num_updates: 1200, iterations: 1200, max_updates: 3000, lr: 0.00003, ups: 2.50, time: 40s 642ms, time_since_start: 14m 19s 299ms, eta: 14m 08s 610ms
+2023-04-25T03:18:09 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:18:09 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:18:11 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:18:11 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:18:11 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:18:15 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:18:19 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:18:19 | mmf.trainers.callbacks.logistics: progress: 1200/3000, val/hateful_memes/cross_entropy: 0.9355, val/total_loss: 0.9355, val/hateful_memes/accuracy: 0.6340, val/hateful_memes/binary_f1: 0.5734, val/hateful_memes/roc_auc: 0.7250, num_updates: 1200, epoch: 5, iterations: 1200, max_updates: 3000, val_time: 09s 971ms, best_update: 1000, best_iteration: 1000, best_val/hateful_memes/roc_auc: 0.735354
+2023-04-25T03:18:53 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:18:53 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:18:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:19:00 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:19:00 | mmf.trainers.callbacks.logistics: progress: 1300/3000, train/hateful_memes/cross_entropy: 0.3784, train/hateful_memes/cross_entropy/avg: 0.4175, train/total_loss: 0.3784, train/total_loss/avg: 0.4175, max mem: 7907.0, experiment: run, epoch: 5, num_updates: 1300, iterations: 1300, max_updates: 3000, lr: 0.00003, ups: 2.44, time: 41s 040ms, time_since_start: 15m 10s 313ms, eta: 13m 29s 327ms
+2023-04-25T03:19:00 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:19:00 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:19:02 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:19:02 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:19:03 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:19:07 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:19:10 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:19:14 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:19:14 | mmf.trainers.callbacks.logistics: progress: 1300/3000, val/hateful_memes/cross_entropy: 1.0135, val/total_loss: 1.0135, val/hateful_memes/accuracy: 0.6400, val/hateful_memes/binary_f1: 0.5361, val/hateful_memes/roc_auc: 0.7357, num_updates: 1300, epoch: 5, iterations: 1300, max_updates: 3000, val_time: 13s 232ms, best_update: 1300, best_iteration: 1300, best_val/hateful_memes/roc_auc: 0.735722
+2023-04-25T03:19:47 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:19:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:19:51 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:19:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:19:57 | mmf.trainers.callbacks.logistics: progress: 1400/3000, train/hateful_memes/cross_entropy: 0.3171, train/hateful_memes/cross_entropy/avg: 0.4049, train/total_loss: 0.3171, train/total_loss/avg: 0.4049, max mem: 7907.0, experiment: run, epoch: 6, num_updates: 1400, iterations: 1400, max_updates: 3000, lr: 0.00003, ups: 2.33, time: 43s 637ms, time_since_start: 16m 07s 186ms, eta: 13m 29s 915ms
+2023-04-25T03:19:57 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:19:57 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:19:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:19:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:19:59 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:20:03 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:20:08 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:20:08 | mmf.trainers.callbacks.logistics: progress: 1400/3000, val/hateful_memes/cross_entropy: 1.4755, val/total_loss: 1.4755, val/hateful_memes/accuracy: 0.6440, val/hateful_memes/binary_f1: 0.4972, val/hateful_memes/roc_auc: 0.7266, num_updates: 1400, epoch: 6, iterations: 1400, max_updates: 3000, val_time: 10s 362ms, best_update: 1300, best_iteration: 1300, best_val/hateful_memes/roc_auc: 0.735722
+2023-04-25T03:20:41 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:20:41 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:20:45 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:20:49 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:20:49 | mmf.trainers.callbacks.logistics: progress: 1500/3000, train/hateful_memes/cross_entropy: 0.3171, train/hateful_memes/cross_entropy/avg: 0.3922, train/total_loss: 0.3171, train/total_loss/avg: 0.3922, max mem: 7907.0, experiment: run, epoch: 6, num_updates: 1500, iterations: 1500, max_updates: 3000, lr: 0.00004, ups: 2.50, time: 40s 962ms, time_since_start: 16m 58s 514ms, eta: 11m 52s 750ms
+2023-04-25T03:20:49 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:20:49 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:20:51 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:20:51 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:20:51 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:20:55 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:21:01 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:21:01 | mmf.trainers.callbacks.logistics: progress: 1500/3000, val/hateful_memes/cross_entropy: 1.0068, val/total_loss: 1.0068, val/hateful_memes/accuracy: 0.6520, val/hateful_memes/binary_f1: 0.5817, val/hateful_memes/roc_auc: 0.7342, num_updates: 1500, epoch: 6, iterations: 1500, max_updates: 3000, val_time: 12s 910ms, best_update: 1300, best_iteration: 1300, best_val/hateful_memes/roc_auc: 0.735722
+2023-04-25T03:21:37 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:21:37 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:21:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:21:44 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:21:44 | mmf.trainers.callbacks.logistics: progress: 1600/3000, train/hateful_memes/cross_entropy: 0.2958, train/hateful_memes/cross_entropy/avg: 0.3707, train/total_loss: 0.2958, train/total_loss/avg: 0.3707, max mem: 7907.0, experiment: run, epoch: 7, num_updates: 1600, iterations: 1600, max_updates: 3000, lr: 0.00004, ups: 2.38, time: 42s 452ms, time_since_start: 17m 53s 881ms, eta: 11m 29s 434ms
+2023-04-25T03:21:44 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:21:44 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:21:46 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:21:46 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:21:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:21:51 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:21:54 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:21:58 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:21:58 | mmf.trainers.callbacks.logistics: progress: 1600/3000, val/hateful_memes/cross_entropy: 1.1647, val/total_loss: 1.1647, val/hateful_memes/accuracy: 0.6280, val/hateful_memes/binary_f1: 0.4775, val/hateful_memes/roc_auc: 0.7459, num_updates: 1600, epoch: 7, iterations: 1600, max_updates: 3000, val_time: 14s 229ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:22:34 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:22:34 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:22:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:22:41 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:22:41 | mmf.trainers.callbacks.logistics: progress: 1700/3000, train/hateful_memes/cross_entropy: 0.2972, train/hateful_memes/cross_entropy/avg: 0.3664, train/total_loss: 0.2972, train/total_loss/avg: 0.3664, max mem: 7907.0, experiment: run, epoch: 7, num_updates: 1700, iterations: 1700, max_updates: 3000, lr: 0.00004, ups: 2.38, time: 42s 502ms, time_since_start: 18m 50s 615ms, eta: 10m 40s 935ms
+2023-04-25T03:22:41 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:22:41 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:22:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:22:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:22:43 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:22:47 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:22:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:22:53 | mmf.trainers.callbacks.logistics: progress: 1700/3000, val/hateful_memes/cross_entropy: 1.5926, val/total_loss: 1.5926, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.4732, val/hateful_memes/roc_auc: 0.7327, num_updates: 1700, epoch: 7, iterations: 1700, max_updates: 3000, val_time: 11s 927ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:23:28 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:23:28 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:23:31 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:23:35 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:23:35 | mmf.trainers.callbacks.logistics: progress: 1800/3000, train/hateful_memes/cross_entropy: 0.2958, train/hateful_memes/cross_entropy/avg: 0.3535, train/total_loss: 0.2958, train/total_loss/avg: 0.3535, max mem: 7907.0, experiment: run, epoch: 7, num_updates: 1800, iterations: 1800, max_updates: 3000, lr: 0.00005, ups: 2.44, time: 41s 939ms, time_since_start: 19m 44s 484ms, eta: 09m 43s 797ms
+2023-04-25T03:23:35 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:23:35 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:23:37 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:23:37 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:23:37 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:23:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:23:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:23:47 | mmf.trainers.callbacks.logistics: progress: 1800/3000, val/hateful_memes/cross_entropy: 1.3457, val/total_loss: 1.3457, val/hateful_memes/accuracy: 0.6560, val/hateful_memes/binary_f1: 0.5567, val/hateful_memes/roc_auc: 0.7322, num_updates: 1800, epoch: 7, iterations: 1800, max_updates: 3000, val_time: 12s 256ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:24:22 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:24:22 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:24:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:24:31 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:24:31 | mmf.trainers.callbacks.logistics: progress: 1900/3000, train/hateful_memes/cross_entropy: 0.2958, train/hateful_memes/cross_entropy/avg: 0.3431, train/total_loss: 0.2958, train/total_loss/avg: 0.3431, max mem: 7907.0, experiment: run, epoch: 8, num_updates: 1900, iterations: 1900, max_updates: 3000, lr: 0.00005, ups: 2.27, time: 44s 146ms, time_since_start: 20m 40s 891ms, eta: 09m 23s 315ms
+2023-04-25T03:24:31 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:24:31 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:24:33 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:24:33 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:24:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:24:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:24:43 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:24:43 | mmf.trainers.callbacks.logistics: progress: 1900/3000, val/hateful_memes/cross_entropy: 1.5035, val/total_loss: 1.5035, val/hateful_memes/accuracy: 0.6200, val/hateful_memes/binary_f1: 0.4444, val/hateful_memes/roc_auc: 0.7443, num_updates: 1900, epoch: 8, iterations: 1900, max_updates: 3000, val_time: 12s 162ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:25:17 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:25:17 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:25:20 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:25:25 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:25:25 | mmf.trainers.callbacks.logistics: progress: 2000/3000, train/hateful_memes/cross_entropy: 0.2754, train/hateful_memes/cross_entropy/avg: 0.3327, train/total_loss: 0.2754, train/total_loss/avg: 0.3327, max mem: 7907.0, experiment: run, epoch: 8, num_updates: 2000, iterations: 2000, max_updates: 3000, lr: 0.00005, ups: 2.44, time: 41s 574ms, time_since_start: 21m 34s 630ms, eta: 08m 02s 268ms
+2023-04-25T03:25:25 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:25:25 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:25:27 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:25:27 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:25:27 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:25:31 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:25:37 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:25:37 | mmf.trainers.callbacks.logistics: progress: 2000/3000, val/hateful_memes/cross_entropy: 1.3576, val/total_loss: 1.3576, val/hateful_memes/accuracy: 0.6560, val/hateful_memes/binary_f1: 0.5825, val/hateful_memes/roc_auc: 0.7325, num_updates: 2000, epoch: 8, iterations: 2000, max_updates: 3000, val_time: 11s 856ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:26:10 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:26:10 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:26:14 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:26:17 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:26:17 | mmf.trainers.callbacks.logistics: progress: 2100/3000, train/hateful_memes/cross_entropy: 0.2418, train/hateful_memes/cross_entropy/avg: 0.3174, train/total_loss: 0.2418, train/total_loss/avg: 0.3174, max mem: 7907.0, experiment: run, epoch: 8, num_updates: 2100, iterations: 2100, max_updates: 3000, lr: 0.00005, ups: 2.50, time: 40s 689ms, time_since_start: 22m 27s 179ms, eta: 07m 04s 796ms
+2023-04-25T03:26:17 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:26:17 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:26:19 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:26:19 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:26:19 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:26:23 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:26:28 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:26:28 | mmf.trainers.callbacks.logistics: progress: 2100/3000, val/hateful_memes/cross_entropy: 1.4636, val/total_loss: 1.4636, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5013, val/hateful_memes/roc_auc: 0.7358, num_updates: 2100, epoch: 8, iterations: 2100, max_updates: 3000, val_time: 11s 275ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.745883
+2023-04-25T03:27:02 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:27:02 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:27:06 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:27:09 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:27:09 | mmf.trainers.callbacks.logistics: progress: 2200/3000, train/hateful_memes/cross_entropy: 0.2134, train/hateful_memes/cross_entropy/avg: 0.3088, train/total_loss: 0.2134, train/total_loss/avg: 0.3088, max mem: 7907.0, experiment: run, epoch: 9, num_updates: 2200, iterations: 2200, max_updates: 3000, lr: 0.00004, ups: 2.50, time: 40s 430ms, time_since_start: 23m 18s 888ms, eta: 06m 15s 194ms
+2023-04-25T03:27:09 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:27:09 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:27:11 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:27:11 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:27:11 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:27:15 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:27:18 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:27:24 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:27:24 | mmf.trainers.callbacks.logistics: progress: 2200/3000, val/hateful_memes/cross_entropy: 1.7253, val/total_loss: 1.7253, val/hateful_memes/accuracy: 0.6600, val/hateful_memes/binary_f1: 0.5619, val/hateful_memes/roc_auc: 0.7464, num_updates: 2200, epoch: 9, iterations: 2200, max_updates: 3000, val_time: 14s 646ms, best_update: 2200, best_iteration: 2200, best_val/hateful_memes/roc_auc: 0.746395
+2023-04-25T03:27:57 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:27:57 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:28:01 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:28:04 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:28:04 | mmf.trainers.callbacks.logistics: progress: 2300/3000, train/hateful_memes/cross_entropy: 0.1786, train/hateful_memes/cross_entropy/avg: 0.2956, train/total_loss: 0.1786, train/total_loss/avg: 0.2956, max mem: 7907.0, experiment: run, epoch: 9, num_updates: 2300, iterations: 2300, max_updates: 3000, lr: 0.00003, ups: 2.50, time: 40s 897ms, time_since_start: 24m 14s 435ms, eta: 05m 32s 089ms
+2023-04-25T03:28:04 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:28:04 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:28:06 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:28:06 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:28:07 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:28:11 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:28:15 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:28:15 | mmf.trainers.callbacks.logistics: progress: 2300/3000, val/hateful_memes/cross_entropy: 1.6239, val/total_loss: 1.6239, val/hateful_memes/accuracy: 0.6600, val/hateful_memes/binary_f1: 0.5503, val/hateful_memes/roc_auc: 0.7417, num_updates: 2300, epoch: 9, iterations: 2300, max_updates: 3000, val_time: 10s 826ms, best_update: 2200, best_iteration: 2200, best_val/hateful_memes/roc_auc: 0.746395
+2023-04-25T03:28:49 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:28:49 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:28:53 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:28:56 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:28:56 | mmf.trainers.callbacks.logistics: progress: 2400/3000, train/hateful_memes/cross_entropy: 0.1786, train/hateful_memes/cross_entropy/avg: 0.2912, train/total_loss: 0.1786, train/total_loss/avg: 0.2912, max mem: 7907.0, experiment: run, epoch: 10, num_updates: 2400, iterations: 2400, max_updates: 3000, lr: 0.00003, ups: 2.50, time: 40s 592ms, time_since_start: 25m 05s 857ms, eta: 04m 42s 525ms
+2023-04-25T03:28:56 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:28:56 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:28:58 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:28:58 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:28:58 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:29:02 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:29:08 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:29:13 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:29:13 | mmf.trainers.callbacks.logistics: progress: 2400/3000, val/hateful_memes/cross_entropy: 1.7036, val/total_loss: 1.7036, val/hateful_memes/accuracy: 0.6520, val/hateful_memes/binary_f1: 0.5469, val/hateful_memes/roc_auc: 0.7529, num_updates: 2400, epoch: 10, iterations: 2400, max_updates: 3000, val_time: 17s 595ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.752908
+2023-04-25T03:29:47 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:29:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:29:51 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:29:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:29:57 | mmf.trainers.callbacks.logistics: progress: 2500/3000, train/hateful_memes/cross_entropy: 0.1693, train/hateful_memes/cross_entropy/avg: 0.2800, train/total_loss: 0.1693, train/total_loss/avg: 0.2800, max mem: 7907.0, experiment: run, epoch: 10, num_updates: 2500, iterations: 2500, max_updates: 3000, lr: 0.00003, ups: 2.33, time: 43s 528ms, time_since_start: 26m 06s 984ms, eta: 04m 12s 467ms
+2023-04-25T03:29:57 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:29:57 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:29:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:29:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:29:59 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:30:03 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:30:07 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:30:07 | mmf.trainers.callbacks.logistics: progress: 2500/3000, val/hateful_memes/cross_entropy: 1.9671, val/total_loss: 1.9671, val/hateful_memes/accuracy: 0.6480, val/hateful_memes/binary_f1: 0.5368, val/hateful_memes/roc_auc: 0.7390, num_updates: 2500, epoch: 10, iterations: 2500, max_updates: 3000, val_time: 10s 303ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.752908
+2023-04-25T03:30:41 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:30:41 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:30:45 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:30:48 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:30:48 | mmf.trainers.callbacks.logistics: progress: 2600/3000, train/hateful_memes/cross_entropy: 0.1597, train/hateful_memes/cross_entropy/avg: 0.2696, train/total_loss: 0.1597, train/total_loss/avg: 0.2696, max mem: 7907.0, experiment: run, epoch: 10, num_updates: 2600, iterations: 2600, max_updates: 3000, lr: 0.00002, ups: 2.50, time: 40s 697ms, time_since_start: 26m 57s 988ms, eta: 03m 08s 835ms
+2023-04-25T03:30:48 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:30:48 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:30:50 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:30:50 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:30:50 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:30:54 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:31:00 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:31:00 | mmf.trainers.callbacks.logistics: progress: 2600/3000, val/hateful_memes/cross_entropy: 1.9247, val/total_loss: 1.9247, val/hateful_memes/accuracy: 0.6640, val/hateful_memes/binary_f1: 0.5625, val/hateful_memes/roc_auc: 0.7513, num_updates: 2600, epoch: 10, iterations: 2600, max_updates: 3000, val_time: 11s 586ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.752908
+2023-04-25T03:31:33 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:31:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:31:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:31:41 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:31:41 | mmf.trainers.callbacks.logistics: progress: 2700/3000, train/hateful_memes/cross_entropy: 0.1545, train/hateful_memes/cross_entropy/avg: 0.2603, train/total_loss: 0.1545, train/total_loss/avg: 0.2603, max mem: 7907.0, experiment: run, epoch: 11, num_updates: 2700, iterations: 2700, max_updates: 3000, lr: 0.00002, ups: 2.44, time: 41s 307ms, time_since_start: 27m 50s 884ms, eta: 02m 23s 749ms
+2023-04-25T03:31:41 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:31:41 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:31:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:31:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:31:43 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:31:47 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:31:52 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:31:52 | mmf.trainers.callbacks.logistics: progress: 2700/3000, val/hateful_memes/cross_entropy: 1.8954, val/total_loss: 1.8954, val/hateful_memes/accuracy: 0.6720, val/hateful_memes/binary_f1: 0.5729, val/hateful_memes/roc_auc: 0.7514, num_updates: 2700, epoch: 11, iterations: 2700, max_updates: 3000, val_time: 11s 220ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.752908
+2023-04-25T03:32:26 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:32:26 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:32:30 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:32:33 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:32:33 | mmf.trainers.callbacks.logistics: progress: 2800/3000, train/hateful_memes/cross_entropy: 0.1355, train/hateful_memes/cross_entropy/avg: 0.2512, train/total_loss: 0.1355, train/total_loss/avg: 0.2512, max mem: 7907.0, experiment: run, epoch: 11, num_updates: 2800, iterations: 2800, max_updates: 3000, lr: 0.00001, ups: 2.50, time: 40s 735ms, time_since_start: 28m 42s 843ms, eta: 01m 34s 505ms
+2023-04-25T03:32:33 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:32:33 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:32:35 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:32:35 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:32:35 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:32:39 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-25T03:32:43 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:32:48 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:32:48 | mmf.trainers.callbacks.logistics: progress: 2800/3000, val/hateful_memes/cross_entropy: 1.9211, val/total_loss: 1.9211, val/hateful_memes/accuracy: 0.6680, val/hateful_memes/binary_f1: 0.5722, val/hateful_memes/roc_auc: 0.7538, num_updates: 2800, epoch: 11, iterations: 2800, max_updates: 3000, val_time: 14s 678ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.753777
+2023-04-25T03:33:21 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:33:21 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:33:25 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:33:30 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:33:30 | mmf.trainers.callbacks.logistics: progress: 2900/3000, train/hateful_memes/cross_entropy: 0.1349, train/hateful_memes/cross_entropy/avg: 0.2426, train/total_loss: 0.1349, train/total_loss/avg: 0.2426, max mem: 7907.0, experiment: run, epoch: 11, num_updates: 2900, iterations: 2900, max_updates: 3000, lr: 0.00001, ups: 2.38, time: 42s 597ms, time_since_start: 29m 40s 122ms, eta: 49s 413ms
+2023-04-25T03:33:30 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:33:30 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:33:32 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:33:32 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:33:32 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:33:36 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:33:41 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:33:41 | mmf.trainers.callbacks.logistics: progress: 2900/3000, val/hateful_memes/cross_entropy: 2.0218, val/total_loss: 2.0218, val/hateful_memes/accuracy: 0.6720, val/hateful_memes/binary_f1: 0.5838, val/hateful_memes/roc_auc: 0.7517, num_updates: 2900, epoch: 11, iterations: 2900, max_updates: 3000, val_time: 10s 991ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.753777
+2023-04-25T03:34:15 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-25T03:34:15 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:34:19 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:34:24 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:34:24 | mmf.trainers.callbacks.logistics: progress: 3000/3000, train/hateful_memes/cross_entropy: 0.1268, train/hateful_memes/cross_entropy/avg: 0.2349, train/total_loss: 0.1268, train/total_loss/avg: 0.2349, max mem: 7907.0, experiment: run, epoch: 12, num_updates: 3000, iterations: 3000, max_updates: 3000, lr: 0., ups: 2.38, time: 42s 955ms, time_since_start: 30m 34s 071ms, eta: 0ms
+2023-04-25T03:34:24 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-25T03:34:24 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-25T03:34:26 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:34:26 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:34:26 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-25T03:34:30 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-25T03:34:34 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-25T03:34:34 | mmf.trainers.callbacks.logistics: progress: 3000/3000, val/hateful_memes/cross_entropy: 1.9975, val/total_loss: 1.9975, val/hateful_memes/accuracy: 0.6820, val/hateful_memes/binary_f1: 0.6074, val/hateful_memes/roc_auc: 0.7509, num_updates: 3000, epoch: 12, iterations: 3000, max_updates: 3000, val_time: 09s 796ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.753777
+2023-04-25T03:34:34 | mmf.trainers.core.training_loop: Stepping into final validation check
+2023-04-25T03:34:34 | mmf.utils.checkpoint: Restoring checkpoint
+2023-04-25T03:34:34 | mmf.utils.checkpoint: Loading checkpoint
+2023-04-25T03:34:36 | mmf.utils.checkpoint: Checkpoint loaded.
+2023-04-25T03:34:36 | mmf.utils.checkpoint: Current num updates: 2800
+2023-04-25T03:34:36 | mmf.utils.checkpoint: Current iteration: 2800
+2023-04-25T03:34:36 | mmf.utils.checkpoint: Current epoch: 11
+2023-04-25T03:34:52 | mmf.trainers.mmf_trainer: Starting inference on val set
+2023-04-25T03:34:52 | mmf.common.test_reporter: Predicting for hateful_memes
+100% 16/16 [00:02<00:00,  7.12it/s]
+2023-04-25T03:34:55 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-25T03:34:55 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-25T03:34:55 | mmf.trainers.callbacks.logistics: progress: 2800/3000, val/hateful_memes/cross_entropy: 1.9211, val/total_loss: 1.9211, val/hateful_memes/accuracy: 0.6680, val/hateful_memes/binary_f1: 0.5722, val/hateful_memes/roc_auc: 0.7538
+2023-04-25T03:34:55 | mmf.trainers.callbacks.logistics: Finished run in 31m 04s 753ms

@@ -1,0 +1,1141 @@
+2023-04-08 18:50:25.546415: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-08 18:50:27.356157: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_TENSORBOARD_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option config to projects/vilbert/configs/hateful_memes/direct.yaml
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option model to vilbert
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option datasets to hateful_memes
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option run_type to train_val
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.train[0] to hateful_memes/defaults/annotations/train.jsonl
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.val[0] to hateful_memes/defaults/annotations/dev.jsonl
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.test[0] to hateful_memes/defaults/annotations/test.jsonl
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.batch_size to 32
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.tensorboard to True
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option env.tensorboard_logdir to logs/fit/
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.checkpoint_interval to 500
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.evaluation_interval to 200
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option checkpoint.max_to_keep to 1
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.max_updates to 10000
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.log_interval to 500
+2023-04-08T18:51:06 | mmf.utils.configuration: Overriding option training.lr_ratio to 0.3
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_LOG_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_REPORT_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_WANDB_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-08T18:51:06 | mmf: Logging to: ./save/train.log
+2023-04-08T18:51:07 | mmf_cli.run: Namespace(config_override=None, local_rank=None, opts=['config=projects/vilbert/configs/hateful_memes/direct.yaml', 'model=vilbert', 'dataset=hateful_memes', 'run_type=train_val', 'dataset_config.hateful_memes.annotations.train[0]=hateful_memes/defaults/annotations/train.jsonl', 'dataset_config.hateful_memes.annotations.val[0]=hateful_memes/defaults/annotations/dev.jsonl', 'dataset_config.hateful_memes.annotations.test[0]=hateful_memes/defaults/annotations/test.jsonl', 'training.batch_size=32', 'training.tensorboard=True', 'env.tensorboard_logdir=logs/fit/', 'training.checkpoint_interval=500', 'training.evaluation_interval=200', 'checkpoint.max_to_keep=1', 'training.max_updates=10000', 'training.log_interval=500', 'training.lr_ratio=0.3'])
+2023-04-08T18:51:07 | mmf_cli.run: Torch version: 2.0.0+cu118
+2023-04-08T18:51:07 | mmf.utils.general: CUDA Device 0 is: Tesla T4
+2023-04-08T18:51:07 | mmf_cli.run: Using seed 6700126
+2023-04-08T18:51:07 | mmf.trainers.mmf_trainer: Loading datasets
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/features/features_2020_10_01.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/features/features.tar.gz ]
+Downloading features.tar.gz: 100% 10.3G/10.3G [00:58<00:00, 175MB/s]
+[ Starting checksum for features.tar.gz]
+[ Checksum successful for features.tar.gz]
+Unpacking features.tar.gz
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz ]
+Downloading extras.tar.gz: 100% 211k/211k [00:00<00:00, 1.32MB/s]
+[ Starting checksum for extras.tar.gz]
+[ Checksum successful for extras.tar.gz]
+Unpacking extras.tar.gz
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp65eots6b
+Downloading: 100% 28.0/28.0 [00:00<00:00, 26.1kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+creating metadata file for /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+https://huggingface.co/bert-base-uncased/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpvbtc_lc2
+Downloading: 100% 570/570 [00:00<00:00, 476kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+creating metadata file for /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpgqda05qy
+Downloading: 100% 232k/232k [00:00<00:00, 7.14MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt in cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+creating metadata file for /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpifw5si29
+Downloading: 100% 466k/466k [00:00<00:00, 9.94MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json in cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+creating metadata file for /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt from cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json from cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/added_tokens.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/special_tokens_map.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+WARNING 2023-04-08T18:55:39 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T18:55:39 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T18:55:39 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-08T18:55:39 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-08T18:55:39 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-08T18:55:39 | mmf.trainers.mmf_trainer: Loading model
+2023-04-08T18:55:39 | torch.distributed.nn.jit.instantiator: Created a temporary directory at /tmp/tmpviwy9fuz
+2023-04-08T18:55:39 | torch.distributed.nn.jit.instantiator: Writing /tmp/tmpviwy9fuz/_remote_module_non_scriptable.py
+Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "bert_model_name": "bert-base-uncased",
+  "bi_attention_type": 1,
+  "bi_hidden_size": 1024,
+  "bi_intermediate_size": 1024,
+  "bi_num_attention_heads": 8,
+  "bypass_transformer": false,
+  "classifier_dropout": null,
+  "cut_first": "text",
+  "dynamic_attention": false,
+  "embedding_strategy": "plain",
+  "fast_mode": false,
+  "finetune_lr_multiplier": 1,
+  "fixed_t_layer": 0,
+  "fixed_v_layer": 0,
+  "freeze_base": false,
+  "fusion_method": "mul",
+  "gradient_checkpointing": false,
+  "hard_cap_seq_len": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "in_batch_pairs": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "losses": [
+    "cross_entropy"
+  ],
+  "max_position_embeddings": 512,
+  "model": "vilbert",
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_negative": 128,
+  "objective": 0,
+  "pad_token_id": 0,
+  "pooling_method": "mul",
+  "position_embedding_type": "absolute",
+  "random_initialize": false,
+  "special_visual_initialize": true,
+  "t_biattention_id": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "task_specific_tokens": false,
+  "text_only": false,
+  "training_head_type": "classification",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "v_attention_probs_dropout_prob": 0.1,
+  "v_biattention_id": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "v_feature_size": 2048,
+  "v_hidden_act": "gelu",
+  "v_hidden_dropout_prob": 0.1,
+  "v_hidden_size": 1024,
+  "v_initializer_range": 0.02,
+  "v_intermediate_size": 1024,
+  "v_num_attention_heads": 8,
+  "v_num_hidden_layers": 6,
+  "v_target_size": 1601,
+  "visual_embedding_dim": 2048,
+  "visual_target": 0,
+  "visualization": false,
+  "vocab_size": 30522,
+  "with_coattention": true
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/torch/mmf/distributed_-1/tmpvm4x2qjd
+Downloading: 100% 440M/440M [00:06<00:00, 71.7MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin in cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+creating metadata file for /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+loading weights file https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin from cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing ViLBERTBase: ['cls.predictions.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight', 'bert.pooler.dense.bias', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight', 'bert.pooler.dense.weight', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing ViLBERTBase from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing ViLBERTBase from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of ViLBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.encoder.v_layer.3.output.LayerNorm.weight', 'bert.encoder.c_layer.0.biOutput.q_dense1.bias', 'bert.encoder.v_layer.1.attention.self.value.bias', 'bert.encoder.c_layer.1.biOutput.LayerNorm1.weight', 'bert.encoder.v_layer.4.attention.self.value.weight', 'bert.encoder.v_layer.3.attention.self.query.weight', 'bert.encoder.c_layer.2.biattention.value2.weight', 'bert.v_embeddings.image_embeddings.bias', 'bert.encoder.c_layer.4.biattention.query1.bias', 'bert.encoder.c_layer.5.biOutput.LayerNorm1.weight', 'bert.encoder.c_layer.1.t_intermediate.dense.bias', 'bert.encoder.c_layer.1.biOutput.LayerNorm1.bias', 'bert.encoder.c_layer.2.biOutput.LayerNorm1.bias', 'bert.encoder.v_layer.1.attention.output.dense.weight', 'bert.encoder.c_layer.1.biOutput.q_dense1.weight', 'bert.encoder.c_layer.3.biOutput.q_dense1.bias', 'bert.encoder.v_layer.1.attention.output.LayerNorm.bias', 'bert.encoder.c_layer.1.biattention.value1.weight', 'bert.encoder.c_layer.0.v_output.LayerNorm.bias', 'bert.encoder.c_layer.5.biattention.value1.weight', 'bert.encoder.c_layer.3.v_output.LayerNorm.weight', 'bert.encoder.v_layer.0.output.dense.weight', 'bert.encoder.c_layer.3.biattention.value2.bias', 'bert.encoder.v_layer.0.attention.self.value.weight', 'bert.encoder.c_layer.2.biOutput.dense2.weight', 'bert.encoder.c_layer.3.biattention.key2.weight', 'bert.encoder.c_layer.4.biattention.value2.weight', 'bert.encoder.c_layer.1.biOutput.q_dense2.weight', 'bert.encoder.c_layer.0.t_output.dense.weight', 'bert.encoder.c_layer.2.t_intermediate.dense.bias', 'bert.encoder.c_layer.0.biattention.query2.weight', 'bert.v_pooler.dense.bias', 'bert.encoder.c_layer.1.biattention.key2.weight', 'bert.encoder.v_layer.0.output.dense.bias', 'bert.encoder.c_layer.5.biattention.value1.bias', 'bert.encoder.c_layer.0.biOutput.LayerNorm1.bias', 'bert.encoder.c_layer.0.biOutput.dense2.weight', 'bert.encoder.c_layer.2.t_output.dense.bias', 'bert.encoder.v_layer.5.attention.self.value.bias', 'bert.encoder.c_layer.0.biattention.query1.weight', 'bert.encoder.c_layer.0.biOutput.q_dense1.weight', 'bert.encoder.c_layer.4.biOutput.LayerNorm1.weight', 'bert.encoder.v_layer.3.attention.output.dense.bias', 'bert.encoder.c_layer.1.t_intermediate.dense.weight', 'bert.encoder.c_layer.4.t_intermediate.dense.bias', 'bert.encoder.c_layer.3.t_output.LayerNorm.weight', 'bert.encoder.c_layer.3.biOutput.LayerNorm2.bias', 'bert.encoder.c_layer.1.v_output.LayerNorm.bias', 'bert.encoder.c_layer.4.biattention.query2.bias', 'bert.encoder.c_layer.1.v_output.LayerNorm.weight', 'bert.encoder.v_layer.0.intermediate.dense.weight', 'bert.encoder.c_layer.3.t_intermediate.dense.weight', 'bert.encoder.v_layer.2.attention.self.key.weight', 'bert.encoder.c_layer.2.biOutput.LayerNorm2.weight', 'bert.encoder.v_layer.1.output.LayerNorm.bias', 'bert.encoder.v_layer.0.attention.output.dense.weight', 'bert.encoder.c_layer.5.biattention.value2.bias', 'bert.encoder.v_layer.5.attention.output.dense.weight', 'bert.encoder.v_layer.2.intermediate.dense.bias', 'bert.encoder.v_layer.2.output.dense.bias', 'bert.encoder.c_layer.0.biattention.value2.weight', 'bert.encoder.c_layer.0.biOutput.dense1.bias', 'bert.encoder.v_layer.1.attention.self.key.weight', 'bert.encoder.v_layer.1.attention.self.query.weight', 'bert.encoder.c_layer.5.biattention.key2.bias', 'bert.encoder.c_layer.4.biOutput.dense1.weight', 'bert.encoder.c_layer.4.biOutput.q_dense1.bias', 'bert.encoder.c_layer.1.t_output.dense.weight', 'bert.encoder.c_layer.4.t_intermediate.dense.weight', 'bert.encoder.c_layer.2.v_output.LayerNorm.bias', 'bert.encoder.v_layer.4.attention.self.key.bias', 'bert.encoder.c_layer.3.biOutput.q_dense2.bias', 'bert.encoder.c_layer.4.biattention.key2.weight', 'bert.encoder.c_layer.0.biattention.value2.bias', 'bert.encoder.c_layer.1.biattention.value1.bias', 'bert.encoder.c_layer.2.biOutput.dense1.bias', 'bert.encoder.c_layer.4.v_output.LayerNorm.weight', 'bert.encoder.c_layer.5.biOutput.q_dense2.bias', 'bert.encoder.v_layer.1.intermediate.dense.weight', 'bert.encoder.c_layer.3.biOutput.LayerNorm1.bias', 'bert.encoder.c_layer.4.t_output.dense.bias', 'bert.encoder.v_layer.1.output.dense.bias', 'bert.encoder.c_layer.3.t_output.dense.bias', 'bert.encoder.v_layer.5.attention.output.LayerNorm.bias', 'bert.encoder.v_layer.3.intermediate.dense.bias', 'bert.encoder.v_layer.4.intermediate.dense.bias', 'bert.encoder.c_layer.1.biOutput.dense1.bias', 'bert.encoder.c_layer.2.biattention.query1.weight', 'bert.encoder.c_layer.3.biattention.query2.bias', 'bert.encoder.c_layer.3.v_intermediate.dense.weight', 'bert.encoder.v_layer.5.attention.self.value.weight', 'bert.encoder.c_layer.5.t_output.dense.bias', 'bert.encoder.c_layer.1.t_output.LayerNorm.weight', 'bert.encoder.c_layer.3.biOutput.q_dense1.weight', 'bert.encoder.c_layer.1.biOutput.dense2.weight', 'bert.encoder.c_layer.0.biOutput.dense1.weight', 'bert.encoder.v_layer.4.attention.output.dense.weight', 'bert.encoder.c_layer.1.biOutput.q_dense1.bias', 'bert.encoder.c_layer.0.biattention.key2.weight', 'bert.encoder.v_layer.4.intermediate.dense.weight', 'bert.encoder.v_layer.1.output.LayerNorm.weight', 'bert.encoder.v_layer.0.output.LayerNorm.weight', 'bert.encoder.c_layer.4.v_intermediate.dense.bias', 'bert.encoder.c_layer.2.biattention.key2.weight', 'bert.encoder.v_layer.3.attention.self.value.bias', 'bert.encoder.c_layer.5.biOutput.q_dense2.weight', 'bert.encoder.c_layer.4.biattention.query2.weight', 'bert.encoder.c_layer.5.biattention.key2.weight', 'bert.encoder.v_layer.2.attention.output.dense.weight', 'bert.encoder.c_layer.0.biattention.query2.bias', 'bert.encoder.c_layer.4.v_output.dense.weight', 'bert.encoder.c_layer.2.biOutput.q_dense1.bias', 'bert.encoder.c_layer.0.biOutput.LayerNorm1.weight', 'bert.encoder.c_layer.0.biattention.query1.bias', 'bert.encoder.c_layer.0.t_intermediate.dense.weight', 'bert.encoder.c_layer.3.v_output.dense.bias', 'bert.encoder.c_layer.3.biOutput.LayerNorm1.weight', 'bert.encoder.c_layer.2.biattention.query2.bias', 'bert.encoder.c_layer.4.biOutput.q_dense2.bias', 'bert.encoder.v_layer.4.output.LayerNorm.bias', 'bert.encoder.v_layer.3.attention.self.value.weight', 'bert.encoder.c_layer.3.biattention.query1.bias', 'bert.encoder.c_layer.4.biattention.key1.weight', 'bert.encoder.c_layer.0.v_intermediate.dense.bias', 'bert.encoder.c_layer.4.biOutput.LayerNorm1.bias', 'bert.encoder.c_layer.0.biattention.value1.weight', 'bert.encoder.v_layer.1.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.2.v_output.dense.weight', 'bert.encoder.v_layer.5.output.dense.weight', 'bert.encoder.c_layer.2.biOutput.q_dense2.bias', 'bert.encoder.c_layer.2.t_output.LayerNorm.weight', 'bert.encoder.c_layer.4.biattention.value2.bias', 'bert.encoder.c_layer.4.v_output.dense.bias', 'bert.v_pooler.dense.weight', 'bert.encoder.c_layer.2.biattention.query2.weight', 'bert.encoder.c_layer.3.v_output.dense.weight', 'bert.encoder.c_layer.0.biOutput.LayerNorm2.weight', 'bert.encoder.c_layer.1.biattention.key2.bias', 'bert.encoder.c_layer.3.biattention.query1.weight', 'bert.encoder.v_layer.1.attention.output.dense.bias', 'bert.encoder.c_layer.5.v_output.LayerNorm.bias', 'bert.encoder.v_layer.5.output.LayerNorm.bias', 'bert.encoder.c_layer.2.biOutput.dense1.weight', 'bert.encoder.c_layer.4.biOutput.LayerNorm2.bias', 'bert.encoder.c_layer.3.t_output.dense.weight', 'bert.encoder.c_layer.2.v_output.dense.bias', 'bert.encoder.v_layer.0.attention.self.value.bias', 'bert.encoder.c_layer.1.biOutput.q_dense2.bias', 'bert.encoder.c_layer.3.biattention.value2.weight', 'bert.encoder.c_layer.1.biOutput.LayerNorm2.weight', 'bert.encoder.v_layer.1.intermediate.dense.bias', 'bert.encoder.v_layer.0.attention.self.query.bias', 'bert.encoder.v_layer.2.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.5.v_intermediate.dense.bias', 'bert.encoder.c_layer.3.biOutput.dense1.bias', 'bert.encoder.c_layer.3.v_output.LayerNorm.bias', 'bert.encoder.c_layer.1.biattention.query2.bias', 'bert.encoder.c_layer.4.biOutput.q_dense1.weight', 'bert.encoder.v_layer.1.attention.self.query.bias', 'bert.encoder.v_layer.1.attention.self.key.bias', 'bert.encoder.c_layer.0.biattention.key1.weight', 'bert.encoder.c_layer.5.biOutput.dense1.weight', 'bert.encoder.c_layer.2.biattention.query1.bias', 'bert.encoder.v_layer.5.output.LayerNorm.weight', 'bert.encoder.c_layer.5.biattention.query2.bias', 'bert.encoder.c_layer.2.biattention.value2.bias', 'bert.encoder.c_layer.0.t_output.LayerNorm.bias', 'bert.encoder.v_layer.0.intermediate.dense.bias', 'bert.encoder.c_layer.4.v_output.LayerNorm.bias', 'bert.encoder.c_layer.4.biattention.key1.bias', 'bert.encoder.c_layer.3.biOutput.dense1.weight', 'bert.encoder.v_layer.2.attention.self.value.weight', 'bert.encoder.c_layer.2.v_intermediate.dense.weight', 'bert.encoder.c_layer.5.biattention.key1.bias', 'bert.encoder.c_layer.5.t_intermediate.dense.bias', 'bert.encoder.v_layer.3.attention.self.key.weight', 'bert.encoder.c_layer.4.biOutput.q_dense2.weight', 'bert.encoder.v_layer.5.attention.output.dense.bias', 'bert.encoder.c_layer.0.biattention.key2.bias', 'bert.encoder.c_layer.5.biOutput.LayerNorm2.weight', 'bert.encoder.v_layer.3.intermediate.dense.weight', 'bert.encoder.c_layer.3.biOutput.dense2.weight', 'bert.encoder.c_layer.4.biOutput.LayerNorm2.weight', 'bert.encoder.v_layer.1.attention.self.value.weight', 'bert.encoder.v_layer.4.attention.self.value.bias', 'bert.encoder.c_layer.2.biOutput.q_dense1.weight', 'bert.encoder.c_layer.0.t_output.LayerNorm.weight', 'bert.encoder.v_layer.4.output.LayerNorm.weight', 'bert.encoder.c_layer.5.biOutput.dense2.weight', 'bert.encoder.c_layer.0.biOutput.dense2.bias', 'bert.encoder.c_layer.1.biOutput.dense1.weight', 'bert.encoder.c_layer.3.biattention.value1.bias', 'bert.v_embeddings.image_location_embeddings.weight', 'bert.encoder.v_layer.0.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.2.biOutput.LayerNorm1.weight', 'bert.encoder.c_layer.5.v_output.dense.bias', 'bert.encoder.c_layer.5.t_intermediate.dense.weight', 'bert.encoder.c_layer.1.biattention.query2.weight', 'bert.encoder.c_layer.2.t_intermediate.dense.weight', 'bert.encoder.c_layer.5.biOutput.dense1.bias', 'bert.encoder.v_layer.5.attention.self.key.weight', 'bert.encoder.v_layer.1.output.dense.weight', 'bert.encoder.v_layer.5.attention.self.query.weight', 'bert.encoder.v_layer.5.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.5.biattention.query2.weight', 'bert.encoder.v_layer.2.attention.self.query.bias', 'bert.encoder.c_layer.5.v_intermediate.dense.weight', 'bert.encoder.v_layer.3.attention.self.query.bias', 'bert.encoder.c_layer.2.biattention.key1.bias', 'bert.encoder.c_layer.4.biattention.key2.bias', 'bert.encoder.c_layer.1.v_output.dense.bias', 'bert.encoder.v_layer.3.output.dense.weight', 'bert.encoder.c_layer.4.biOutput.dense2.weight', 'bert.encoder.v_layer.3.output.dense.bias', 'bert.encoder.c_layer.4.biattention.query1.weight', 'bert.encoder.c_layer.3.biOutput.dense2.bias', 'bert.encoder.c_layer.0.biOutput.q_dense2.weight', 'bert.encoder.c_layer.5.biOutput.dense2.bias', 'bert.encoder.v_layer.0.attention.self.key.bias', 'bert.encoder.c_layer.5.t_output.dense.weight', 'bert.encoder.c_layer.3.biOutput.LayerNorm2.weight', 'bert.encoder.c_layer.4.biOutput.dense1.bias', 'bert.encoder.c_layer.5.t_output.LayerNorm.bias', 'bert.encoder.v_layer.0.attention.self.key.weight', 'bert.encoder.c_layer.1.biattention.key1.bias', 'bert.encoder.c_layer.1.v_output.dense.weight', 'bert.encoder.c_layer.3.v_intermediate.dense.bias', 'bert.encoder.v_layer.3.attention.self.key.bias', 'bert.encoder.c_layer.2.biOutput.dense2.bias', 'bert.encoder.c_layer.0.t_intermediate.dense.bias', 'bert.encoder.c_layer.5.biOutput.q_dense1.weight', 'bert.encoder.c_layer.1.v_intermediate.dense.bias', 'bert.encoder.c_layer.3.biOutput.q_dense2.weight', 'bert.encoder.c_layer.2.biOutput.LayerNorm2.bias', 'bert.encoder.c_layer.4.t_output.dense.weight', 'bert.encoder.c_layer.2.v_intermediate.dense.bias', 'bert.encoder.c_layer.4.biattention.value1.weight', 'bert.encoder.v_layer.0.attention.output.LayerNorm.bias', 'bert.encoder.c_layer.5.biOutput.LayerNorm1.bias', 'bert.v_embeddings.LayerNorm.bias', 'bert.encoder.c_layer.0.biOutput.q_dense2.bias', 'bert.encoder.c_layer.5.v_output.dense.weight', 'bert.encoder.c_layer.5.biattention.query1.weight', 'bert.encoder.v_layer.2.output.LayerNorm.weight', 'bert.encoder.c_layer.2.biattention.key1.weight', 'bert.encoder.c_layer.4.biattention.value1.bias', 'bert.encoder.c_layer.5.biattention.value2.weight', 'bert.v_embeddings.LayerNorm.weight', 'bert.encoder.c_layer.2.biOutput.q_dense2.weight', 'bert.encoder.c_layer.1.biattention.query1.weight', 'bert.encoder.c_layer.0.biattention.key1.bias', 'bert.encoder.v_layer.0.output.LayerNorm.bias', 'bert.encoder.v_layer.4.output.dense.bias', 'bert.encoder.v_layer.0.attention.self.query.weight', 'bert.encoder.c_layer.0.v_output.dense.bias', 'bert.encoder.c_layer.4.t_output.LayerNorm.bias', 'bert.encoder.v_layer.4.attention.self.key.weight', 'bert.encoder.v_layer.3.attention.output.LayerNorm.bias', 'bert.encoder.v_layer.2.attention.self.query.weight', 'bert.encoder.c_layer.4.v_intermediate.dense.weight', 'bert.encoder.c_layer.3.biattention.query2.weight', 'bert.encoder.c_layer.4.t_output.LayerNorm.weight', 'bert.v_embeddings.image_embeddings.weight', 'bert.t_pooler.dense.bias', 'bert.encoder.c_layer.5.biOutput.q_dense1.bias', 'bert.encoder.c_layer.3.biattention.value1.weight', 'bert.encoder.c_layer.1.t_output.dense.bias', 'bert.encoder.c_layer.3.biattention.key1.bias', 'bert.encoder.c_layer.1.biOutput.dense2.bias', 'bert.encoder.v_layer.2.attention.output.dense.bias', 'bert.encoder.c_layer.0.biOutput.LayerNorm2.bias', 'bert.encoder.c_layer.5.t_output.LayerNorm.weight', 'bert.encoder.c_layer.0.v_intermediate.dense.weight', 'bert.encoder.c_layer.1.biOutput.LayerNorm2.bias', 'bert.encoder.v_layer.2.attention.self.key.bias', 'bert.encoder.v_layer.4.attention.self.query.bias', 'bert.encoder.c_layer.5.v_output.LayerNorm.weight', 'bert.encoder.c_layer.0.v_output.dense.weight', 'bert.encoder.v_layer.4.attention.output.LayerNorm.bias', 'bert.encoder.v_layer.5.attention.self.query.bias', 'bert.encoder.c_layer.4.biOutput.dense2.bias', 'bert.encoder.c_layer.1.v_intermediate.dense.weight', 'bert.encoder.v_layer.4.output.dense.weight', 'bert.encoder.v_layer.5.output.dense.bias', 'bert.encoder.v_layer.4.attention.self.query.weight', 'bert.encoder.c_layer.2.t_output.LayerNorm.bias', 'bert.encoder.v_layer.4.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.2.biattention.value1.bias', 'bert.encoder.c_layer.0.biattention.value1.bias', 'bert.encoder.v_layer.2.attention.self.value.bias', 'bert.encoder.c_layer.0.t_output.dense.bias', 'bert.encoder.v_layer.2.intermediate.dense.weight', 'bert.encoder.c_layer.1.biattention.key1.weight', 'bert.encoder.c_layer.5.biOutput.LayerNorm2.bias', 'bert.encoder.c_layer.5.biattention.key1.weight', 'bert.v_embeddings.image_location_embeddings.bias', 'bert.encoder.v_layer.2.output.dense.weight', 'bert.encoder.c_layer.2.biattention.key2.bias', 'bert.encoder.c_layer.3.t_output.LayerNorm.bias', 'bert.encoder.v_layer.5.intermediate.dense.bias', 'bert.encoder.v_layer.3.output.LayerNorm.bias', 'bert.encoder.c_layer.1.biattention.value2.weight', 'bert.encoder.c_layer.1.t_output.LayerNorm.bias', 'bert.encoder.v_layer.5.intermediate.dense.weight', 'bert.encoder.v_layer.3.attention.output.LayerNorm.weight', 'bert.encoder.c_layer.0.v_output.LayerNorm.weight', 'bert.encoder.v_layer.4.attention.output.dense.bias', 'bert.encoder.c_layer.2.v_output.LayerNorm.weight', 'bert.encoder.c_layer.3.t_intermediate.dense.bias', 'bert.encoder.c_layer.3.biattention.key1.weight', 'bert.encoder.c_layer.2.t_output.dense.weight', 'bert.t_pooler.dense.weight', 'bert.encoder.v_layer.3.attention.output.dense.weight', 'bert.encoder.c_layer.1.biattention.query1.bias', 'bert.encoder.c_layer.5.biattention.query1.bias', 'bert.encoder.v_layer.2.attention.output.LayerNorm.bias', 'bert.encoder.c_layer.2.biattention.value1.weight', 'bert.encoder.v_layer.2.output.LayerNorm.bias', 'bert.encoder.c_layer.3.biattention.key2.bias', 'bert.encoder.c_layer.1.biattention.value2.bias', 'bert.encoder.v_layer.5.attention.self.key.bias', 'bert.encoder.v_layer.0.attention.output.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2023-04-08T18:55:56 | mmf.trainers.mmf_trainer: Loading optimizer
+2023-04-08T18:55:56 | mmf.trainers.mmf_trainer: Loading metrics
+2023-04-08T18:55:57 | mmf.trainers.mmf_trainer: ===== Model =====
+2023-04-08T18:55:57 | mmf.trainers.mmf_trainer: ViLBERT(
+  (model): ViLBERTForClassification(
+    (bert): ViLBERTBase(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (v_embeddings): BertImageFeatureEmbeddings(
+        (image_embeddings): Linear(in_features=2048, out_features=1024, bias=True)
+        (image_location_embeddings): Linear(in_features=5, out_features=1024, bias=True)
+        (LayerNorm): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+        (v_layer): ModuleList(
+          (0-5): 6 x BertImageLayer(
+            (attention): BertImageAttention(
+              (self): BertImageSelfAttention(
+                (query): Linear(in_features=1024, out_features=1024, bias=True)
+                (key): Linear(in_features=1024, out_features=1024, bias=True)
+                (value): Linear(in_features=1024, out_features=1024, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertImageSelfOutput(
+                (dense): Linear(in_features=1024, out_features=1024, bias=True)
+                (LayerNorm): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertImageIntermediate(
+              (dense): Linear(in_features=1024, out_features=1024, bias=True)
+            )
+            (output): BertImageOutput(
+              (dense): Linear(in_features=1024, out_features=1024, bias=True)
+              (LayerNorm): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+        (c_layer): ModuleList(
+          (0-5): 6 x BertConnectionLayer(
+            (biattention): BertBiAttention(
+              (query1): Linear(in_features=1024, out_features=1024, bias=True)
+              (key1): Linear(in_features=1024, out_features=1024, bias=True)
+              (value1): Linear(in_features=1024, out_features=1024, bias=True)
+              (dropout1): Dropout(p=0.1, inplace=False)
+              (query2): Linear(in_features=768, out_features=1024, bias=True)
+              (key2): Linear(in_features=768, out_features=1024, bias=True)
+              (value2): Linear(in_features=768, out_features=1024, bias=True)
+              (dropout2): Dropout(p=0.1, inplace=False)
+            )
+            (biOutput): BertBiOutput(
+              (dense1): Linear(in_features=1024, out_features=1024, bias=True)
+              (LayerNorm1): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+              (dropout1): Dropout(p=0.1, inplace=False)
+              (q_dense1): Linear(in_features=1024, out_features=1024, bias=True)
+              (q_dropout1): Dropout(p=0.1, inplace=False)
+              (dense2): Linear(in_features=1024, out_features=768, bias=True)
+              (LayerNorm2): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout2): Dropout(p=0.1, inplace=False)
+              (q_dense2): Linear(in_features=1024, out_features=768, bias=True)
+              (q_dropout2): Dropout(p=0.1, inplace=False)
+            )
+            (v_intermediate): BertImageIntermediate(
+              (dense): Linear(in_features=1024, out_features=1024, bias=True)
+            )
+            (v_output): BertImageOutput(
+              (dense): Linear(in_features=1024, out_features=1024, bias=True)
+              (LayerNorm): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (t_intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (t_output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (t_pooler): BertTextPooler(
+        (dense): Linear(in_features=768, out_features=1024, bias=True)
+        (activation): ReLU()
+      )
+      (v_pooler): BertImagePooler(
+        (dense): Linear(in_features=1024, out_features=1024, bias=True)
+        (activation): ReLU()
+      )
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (classifier): Sequential(
+      (0): BertPredictionHeadTransform(
+        (dense): Linear(in_features=1024, out_features=1024, bias=True)
+        (LayerNorm): LayerNorm((1024,), eps=1e-12, elementwise_affine=True)
+      )
+      (1): Linear(in_features=1024, out_features=2, bias=True)
+    )
+  )
+  (losses): Losses(
+    (losses): ModuleList(
+      (0): MMFLoss(
+        (loss_criterion): CrossEntropyLoss(
+          (loss_fn): CrossEntropyLoss()
+        )
+      )
+    )
+  )
+)
+2023-04-08T18:55:57 | mmf.utils.general: Total Parameters: 247780354. Trained Parameters: 247780354
+2023-04-08T18:55:57 | mmf.trainers.core.training_loop: Starting training...
+2023-04-08T19:00:56 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:00:56 | mmf.common.test_reporter: Predicting for hateful_memes
+2023-04-08T19:01:06 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:01:06 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:01:06 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:03:49 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:04:27 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:05:19 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:05:20 | mmf.trainers.callbacks.logistics: progress: 200/10000, val/hateful_memes/cross_entropy: 0.7784, val/total_loss: 0.7784, val/hateful_memes/accuracy: 0.5020, val/hateful_memes/binary_f1: 0.1324, val/hateful_memes/roc_auc: 0.5373, num_updates: 200, epoch: 1, iterations: 200, max_updates: 10000, val_time: 04m 23s 311ms, best_update: 200, best_iteration: 200, best_val/hateful_memes/roc_auc: 0.537264
+2023-04-08T19:10:25 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:10:25 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:10:25 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:10:25 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:10:35 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:10:35 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:10:35 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:10:48 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:11:00 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:11:14 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:11:14 | mmf.trainers.callbacks.logistics: progress: 400/10000, val/hateful_memes/cross_entropy: 0.7591, val/total_loss: 0.7591, val/hateful_memes/accuracy: 0.5080, val/hateful_memes/binary_f1: 0.0611, val/hateful_memes/roc_auc: 0.5667, num_updates: 400, epoch: 2, iterations: 400, max_updates: 10000, val_time: 49s 489ms, best_update: 400, best_iteration: 400, best_val/hateful_memes/roc_auc: 0.566720
+2023-04-08T19:13:49 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T19:13:49 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:14:01 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:14:14 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:14:14 | mmf.trainers.callbacks.logistics: progress: 500/10000, train/hateful_memes/cross_entropy: 0.7023, train/hateful_memes/cross_entropy/avg: 0.7023, train/total_loss: 0.7023, train/total_loss/avg: 0.7023, max mem: 9428.0, experiment: run, epoch: 2, num_updates: 500, iterations: 500, max_updates: 10000, lr: 0., ups: 2.79, time: 02m 59s 753ms, time_since_start: 18m 17s 231ms, eta: 01h 01m 28s 552ms
+2023-04-08T19:16:48 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:16:48 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:16:48 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:16:48 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:16:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:16:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:16:59 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:17:11 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:17:24 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:17:38 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:17:38 | mmf.trainers.callbacks.logistics: progress: 600/10000, val/hateful_memes/cross_entropy: 0.8344, val/total_loss: 0.8344, val/hateful_memes/accuracy: 0.5100, val/hateful_memes/binary_f1: 0.0392, val/hateful_memes/roc_auc: 0.5802, num_updates: 600, epoch: 3, iterations: 600, max_updates: 10000, val_time: 49s 886ms, best_update: 600, best_iteration: 600, best_val/hateful_memes/roc_auc: 0.580208
+2023-04-08T19:22:42 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:22:42 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:22:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:22:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:22:51 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:22:51 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:22:52 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:23:04 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:23:17 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:23:31 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:23:31 | mmf.trainers.callbacks.logistics: progress: 800/10000, val/hateful_memes/cross_entropy: 0.9302, val/total_loss: 0.9302, val/hateful_memes/accuracy: 0.5220, val/hateful_memes/binary_f1: 0.0981, val/hateful_memes/roc_auc: 0.5972, num_updates: 800, epoch: 4, iterations: 800, max_updates: 10000, val_time: 48s 993ms, best_update: 800, best_iteration: 800, best_val/hateful_memes/roc_auc: 0.597232
+2023-04-08T19:28:36 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T19:28:36 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:28:48 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:29:00 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:29:01 | mmf.trainers.callbacks.logistics: progress: 1000/10000, train/hateful_memes/cross_entropy: 0.5498, train/hateful_memes/cross_entropy/avg: 0.6260, train/total_loss: 0.5498, train/total_loss/avg: 0.6260, max mem: 9428.0, experiment: run, epoch: 4, num_updates: 1000, iterations: 1000, max_updates: 10000, lr: 0.00001, ups: 1.52, time: 05m 29s 615ms, time_since_start: 33m 03s 674ms, eta: 01h 46m 47s 732ms
+2023-04-08T19:29:01 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:29:01 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:29:01 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:29:01 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:29:14 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:29:14 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:29:14 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:29:29 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:29:43 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:29:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:29:57 | mmf.trainers.callbacks.logistics: progress: 1000/10000, val/hateful_memes/cross_entropy: 0.8889, val/total_loss: 0.8889, val/hateful_memes/accuracy: 0.5520, val/hateful_memes/binary_f1: 0.2821, val/hateful_memes/roc_auc: 0.6272, num_updates: 1000, epoch: 4, iterations: 1000, max_updates: 10000, val_time: 56s 320ms, best_update: 1000, best_iteration: 1000, best_val/hateful_memes/roc_auc: 0.627248
+2023-04-08T19:35:03 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:35:03 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:35:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:35:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:35:12 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:35:12 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:35:13 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:35:25 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:35:38 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:35:52 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:35:52 | mmf.trainers.callbacks.logistics: progress: 1200/10000, val/hateful_memes/cross_entropy: 0.8224, val/total_loss: 0.8224, val/hateful_memes/accuracy: 0.5940, val/hateful_memes/binary_f1: 0.4469, val/hateful_memes/roc_auc: 0.6645, num_updates: 1200, epoch: 5, iterations: 1200, max_updates: 10000, val_time: 49s 185ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.664496
+2023-04-08T19:40:58 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:40:58 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:40:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:40:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:41:08 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:41:08 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:41:09 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:41:22 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:41:34 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:41:49 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:41:49 | mmf.trainers.callbacks.logistics: progress: 1400/10000, val/hateful_memes/cross_entropy: 0.7003, val/total_loss: 0.7003, val/hateful_memes/accuracy: 0.6080, val/hateful_memes/binary_f1: 0.5196, val/hateful_memes/roc_auc: 0.6783, num_updates: 1400, epoch: 6, iterations: 1400, max_updates: 10000, val_time: 50s 788ms, best_update: 1400, best_iteration: 1400, best_val/hateful_memes/roc_auc: 0.678256
+2023-04-08T19:44:25 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T19:44:25 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:44:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:44:49 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:44:49 | mmf.trainers.callbacks.logistics: progress: 1500/10000, train/hateful_memes/cross_entropy: 0.5613, train/hateful_memes/cross_entropy/avg: 0.6044, train/total_loss: 0.5613, train/total_loss/avg: 0.6044, max mem: 9428.0, experiment: run, epoch: 6, num_updates: 1500, iterations: 1500, max_updates: 10000, lr: 0.00001, ups: 2.78, time: 03m 692ms, time_since_start: 48m 52s 656ms, eta: 55m 17s 517ms
+2023-04-08T19:47:23 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:47:23 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:47:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:47:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:47:32 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:47:32 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:47:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:47:46 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:47:58 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:48:12 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:48:12 | mmf.trainers.callbacks.logistics: progress: 1600/10000, val/hateful_memes/cross_entropy: 0.7041, val/total_loss: 0.7041, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.5568, val/hateful_memes/roc_auc: 0.6791, num_updates: 1600, epoch: 7, iterations: 1600, max_updates: 10000, val_time: 48s 939ms, best_update: 1600, best_iteration: 1600, best_val/hateful_memes/roc_auc: 0.679104
+2023-04-08T19:53:19 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:53:19 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:53:19 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:53:19 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:53:29 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:53:29 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:53:30 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:53:42 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T19:53:54 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:54:09 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:54:09 | mmf.trainers.callbacks.logistics: progress: 1800/10000, val/hateful_memes/cross_entropy: 0.8187, val/total_loss: 0.8187, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5405, val/hateful_memes/roc_auc: 0.6809, num_updates: 1800, epoch: 7, iterations: 1800, max_updates: 10000, val_time: 50s 253ms, best_update: 1800, best_iteration: 1800, best_val/hateful_memes/roc_auc: 0.680864
+2023-04-08T19:59:14 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T19:59:14 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T19:59:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T19:59:38 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T19:59:38 | mmf.trainers.callbacks.logistics: progress: 2000/10000, train/hateful_memes/cross_entropy: 0.5498, train/hateful_memes/cross_entropy/avg: 0.5504, train/total_loss: 0.5498, train/total_loss/avg: 0.5504, max mem: 9428.0, experiment: run, epoch: 8, num_updates: 2000, iterations: 2000, max_updates: 10000, lr: 0.00001, ups: 1.52, time: 05m 29s 305ms, time_since_start: 01h 03m 41s 260ms, eta: 01h 34m 50s 396ms
+2023-04-08T19:59:38 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T19:59:38 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T19:59:38 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T19:59:38 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T19:59:50 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T19:59:50 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T19:59:51 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:00:05 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T20:00:19 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:00:34 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:00:34 | mmf.trainers.callbacks.logistics: progress: 2000/10000, val/hateful_memes/cross_entropy: 1.2281, val/total_loss: 1.2281, val/hateful_memes/accuracy: 0.5640, val/hateful_memes/binary_f1: 0.2685, val/hateful_memes/roc_auc: 0.7072, num_updates: 2000, epoch: 8, iterations: 2000, max_updates: 10000, val_time: 55s 861ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.707200
+2023-04-08T20:05:40 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:05:40 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:05:40 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:05:40 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:05:49 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:05:49 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:05:50 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:06:02 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:06:16 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:06:16 | mmf.trainers.callbacks.logistics: progress: 2200/10000, val/hateful_memes/cross_entropy: 0.9277, val/total_loss: 0.9277, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5217, val/hateful_memes/roc_auc: 0.7017, num_updates: 2200, epoch: 9, iterations: 2200, max_updates: 10000, val_time: 36s 515ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.707200
+2023-04-08T20:11:20 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:11:20 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:11:20 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:11:20 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:11:30 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:11:30 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:11:31 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:11:43 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:11:56 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:11:56 | mmf.trainers.callbacks.logistics: progress: 2400/10000, val/hateful_memes/cross_entropy: 1.0207, val/total_loss: 1.0207, val/hateful_memes/accuracy: 0.6360, val/hateful_memes/binary_f1: 0.5539, val/hateful_memes/roc_auc: 0.7037, num_updates: 2400, epoch: 10, iterations: 2400, max_updates: 10000, val_time: 35s 770ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.707200
+2023-04-08T20:14:30 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T20:14:30 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:14:42 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:14:55 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:14:55 | mmf.trainers.callbacks.logistics: progress: 2500/10000, train/hateful_memes/cross_entropy: 0.5498, train/hateful_memes/cross_entropy/avg: 0.4787, train/total_loss: 0.5498, train/total_loss/avg: 0.4787, max mem: 9428.0, experiment: run, epoch: 10, num_updates: 2500, iterations: 2500, max_updates: 10000, lr: 0.00001, ups: 2.81, time: 02m 58s 951ms, time_since_start: 01h 18m 57s 900ms, eta: 48m 19s 020ms
+2023-04-08T20:17:28 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:17:28 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:17:28 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:17:28 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:17:38 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:17:38 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:17:38 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:17:51 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:18:03 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:18:03 | mmf.trainers.callbacks.logistics: progress: 2600/10000, val/hateful_memes/cross_entropy: 1.0071, val/total_loss: 1.0071, val/hateful_memes/accuracy: 0.6120, val/hateful_memes/binary_f1: 0.5174, val/hateful_memes/roc_auc: 0.6934, num_updates: 2600, epoch: 10, iterations: 2600, max_updates: 10000, val_time: 34s 525ms, best_update: 2000, best_iteration: 2000, best_val/hateful_memes/roc_auc: 0.707200
+2023-04-08T20:23:07 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:23:07 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:23:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:23:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:23:17 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:23:17 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:23:17 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:23:30 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-08T20:23:43 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:23:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:23:57 | mmf.trainers.callbacks.logistics: progress: 2800/10000, val/hateful_memes/cross_entropy: 1.3997, val/total_loss: 1.3997, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.5140, val/hateful_memes/roc_auc: 0.7103, num_updates: 2800, epoch: 11, iterations: 2800, max_updates: 10000, val_time: 49s 768ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:29:03 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T20:29:03 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:29:16 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:29:29 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:29:29 | mmf.trainers.callbacks.logistics: progress: 3000/10000, train/hateful_memes/cross_entropy: 0.3881, train/hateful_memes/cross_entropy/avg: 0.4099, train/total_loss: 0.3881, train/total_loss/avg: 0.4099, max mem: 9428.0, experiment: run, epoch: 12, num_updates: 3000, iterations: 3000, max_updates: 10000, lr: 0.00001, ups: 1.51, time: 05m 32s 133ms, time_since_start: 01h 33m 32s 195ms, eta: 01h 23m 41s 858ms
+2023-04-08T20:29:29 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:29:29 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:29:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:29:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:29:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:29:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:29:44 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:30:00 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:30:13 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:30:13 | mmf.trainers.callbacks.logistics: progress: 3000/10000, val/hateful_memes/cross_entropy: 1.6788, val/total_loss: 1.6788, val/hateful_memes/accuracy: 0.6060, val/hateful_memes/binary_f1: 0.4661, val/hateful_memes/roc_auc: 0.7078, num_updates: 3000, epoch: 12, iterations: 3000, max_updates: 10000, val_time: 43s 801ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:35:18 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:35:18 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:35:18 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:35:18 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:35:28 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:35:28 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:35:29 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:35:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:35:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:35:53 | mmf.trainers.callbacks.logistics: progress: 3200/10000, val/hateful_memes/cross_entropy: 1.6671, val/total_loss: 1.6671, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.4824, val/hateful_memes/roc_auc: 0.6958, num_updates: 3200, epoch: 13, iterations: 3200, max_updates: 10000, val_time: 34s 844ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:40:58 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:40:58 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:40:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:40:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:41:07 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:41:07 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:41:08 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:41:20 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:41:33 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:41:33 | mmf.trainers.callbacks.logistics: progress: 3400/10000, val/hateful_memes/cross_entropy: 1.9770, val/total_loss: 1.9770, val/hateful_memes/accuracy: 0.5980, val/hateful_memes/binary_f1: 0.4306, val/hateful_memes/roc_auc: 0.6964, num_updates: 3400, epoch: 13, iterations: 3400, max_updates: 10000, val_time: 35s 551ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:44:09 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T20:44:09 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:44:22 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:44:35 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:44:35 | mmf.trainers.callbacks.logistics: progress: 3500/10000, train/hateful_memes/cross_entropy: 0.3881, train/hateful_memes/cross_entropy/avg: 0.3560, train/total_loss: 0.3881, train/total_loss/avg: 0.3560, max mem: 9428.0, experiment: run, epoch: 14, num_updates: 3500, iterations: 3500, max_updates: 10000, lr: 0.00001, ups: 2.75, time: 03m 02s 270ms, time_since_start: 01h 48m 38s 650ms, eta: 42m 39s 083ms
+2023-04-08T20:47:09 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:47:09 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:47:09 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:47:09 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:47:19 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:47:19 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:47:20 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:47:33 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:47:45 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:47:45 | mmf.trainers.callbacks.logistics: progress: 3600/10000, val/hateful_memes/cross_entropy: 2.0087, val/total_loss: 2.0087, val/hateful_memes/accuracy: 0.6060, val/hateful_memes/binary_f1: 0.4603, val/hateful_memes/roc_auc: 0.6845, num_updates: 3600, epoch: 14, iterations: 3600, max_updates: 10000, val_time: 36s 162ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:52:49 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:52:49 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:52:49 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:52:49 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:52:58 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:52:58 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:52:59 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:53:11 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:53:25 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:53:25 | mmf.trainers.callbacks.logistics: progress: 3800/10000, val/hateful_memes/cross_entropy: 1.8606, val/total_loss: 1.8606, val/hateful_memes/accuracy: 0.6240, val/hateful_memes/binary_f1: 0.5079, val/hateful_memes/roc_auc: 0.6927, num_updates: 3800, epoch: 15, iterations: 3800, max_updates: 10000, val_time: 36s 004ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T20:58:28 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T20:58:28 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:58:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:58:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:58:53 | mmf.trainers.callbacks.logistics: progress: 4000/10000, train/hateful_memes/cross_entropy: 0.1919, train/hateful_memes/cross_entropy/avg: 0.3169, train/total_loss: 0.1919, train/total_loss/avg: 0.3169, max mem: 9428.0, experiment: run, epoch: 16, num_updates: 4000, iterations: 4000, max_updates: 10000, lr: 0.00001, ups: 1.52, time: 05m 28s 609ms, time_since_start: 02h 02m 56s 448ms, eta: 01h 10m 58s 784ms
+2023-04-08T20:58:53 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T20:58:53 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T20:58:53 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T20:58:53 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T20:59:04 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T20:59:04 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T20:59:05 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T20:59:20 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T20:59:33 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T20:59:33 | mmf.trainers.callbacks.logistics: progress: 4000/10000, val/hateful_memes/cross_entropy: 2.2108, val/total_loss: 2.2108, val/hateful_memes/accuracy: 0.6020, val/hateful_memes/binary_f1: 0.4518, val/hateful_memes/roc_auc: 0.6720, num_updates: 4000, epoch: 16, iterations: 4000, max_updates: 10000, val_time: 40s 142ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:04:36 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:04:36 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:04:36 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:04:36 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:04:47 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:04:47 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:04:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:05:00 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:05:12 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:05:13 | mmf.trainers.callbacks.logistics: progress: 4200/10000, val/hateful_memes/cross_entropy: 1.7366, val/total_loss: 1.7366, val/hateful_memes/accuracy: 0.6200, val/hateful_memes/binary_f1: 0.5540, val/hateful_memes/roc_auc: 0.6947, num_updates: 4200, epoch: 16, iterations: 4200, max_updates: 10000, val_time: 36s 120ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:10:17 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:10:17 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:10:17 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:10:17 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:10:28 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:10:28 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:10:28 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:10:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:10:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:10:53 | mmf.trainers.callbacks.logistics: progress: 4400/10000, val/hateful_memes/cross_entropy: 2.1471, val/total_loss: 2.1471, val/hateful_memes/accuracy: 0.6200, val/hateful_memes/binary_f1: 0.5202, val/hateful_memes/roc_auc: 0.6812, num_updates: 4400, epoch: 17, iterations: 4400, max_updates: 10000, val_time: 36s 098ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:13:27 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T21:13:27 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:13:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:13:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:13:53 | mmf.trainers.callbacks.logistics: progress: 4500/10000, train/hateful_memes/cross_entropy: 0.1919, train/hateful_memes/cross_entropy/avg: 0.2839, train/total_loss: 0.1919, train/total_loss/avg: 0.2839, max mem: 9428.0, experiment: run, epoch: 17, num_updates: 4500, iterations: 4500, max_updates: 10000, lr: 0.00001, ups: 2.79, time: 02m 59s 527ms, time_since_start: 02h 17m 55s 758ms, eta: 35m 32s 789ms
+2023-04-08T21:16:27 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:16:27 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:16:27 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:16:27 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:16:38 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:16:38 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:16:38 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:16:51 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:17:03 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:17:03 | mmf.trainers.callbacks.logistics: progress: 4600/10000, val/hateful_memes/cross_entropy: 2.2628, val/total_loss: 2.2628, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.4905, val/hateful_memes/roc_auc: 0.6951, num_updates: 4600, epoch: 18, iterations: 4600, max_updates: 10000, val_time: 35s 564ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:22:07 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:22:07 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:22:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:22:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:22:17 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:22:17 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:22:17 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:22:30 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:22:42 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:22:42 | mmf.trainers.callbacks.logistics: progress: 4800/10000, val/hateful_memes/cross_entropy: 2.1776, val/total_loss: 2.1776, val/hateful_memes/accuracy: 0.6080, val/hateful_memes/binary_f1: 0.4948, val/hateful_memes/roc_auc: 0.7020, num_updates: 4800, epoch: 19, iterations: 4800, max_updates: 10000, val_time: 35s 446ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:27:47 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T21:27:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:27:59 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:28:11 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:28:11 | mmf.trainers.callbacks.logistics: progress: 5000/10000, train/hateful_memes/cross_entropy: 0.0660, train/hateful_memes/cross_entropy/avg: 0.2562, train/total_loss: 0.0660, train/total_loss/avg: 0.2562, max mem: 9428.0, experiment: run, epoch: 19, num_updates: 5000, iterations: 5000, max_updates: 10000, lr: 0.00001, ups: 1.52, time: 05m 28s 501ms, time_since_start: 02h 32m 13s 981ms, eta: 59m 07s 821ms
+2023-04-08T21:28:11 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:28:11 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:28:11 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:28:11 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:28:22 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:28:22 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:28:23 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:28:36 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:28:49 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:28:49 | mmf.trainers.callbacks.logistics: progress: 5000/10000, val/hateful_memes/cross_entropy: 2.3129, val/total_loss: 2.3129, val/hateful_memes/accuracy: 0.6140, val/hateful_memes/binary_f1: 0.4987, val/hateful_memes/roc_auc: 0.6972, num_updates: 5000, epoch: 19, iterations: 5000, max_updates: 10000, val_time: 38s 360ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:33:54 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:33:54 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:33:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:33:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:34:03 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:34:03 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:34:04 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:34:16 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:34:29 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:34:29 | mmf.trainers.callbacks.logistics: progress: 5200/10000, val/hateful_memes/cross_entropy: 2.2940, val/total_loss: 2.2940, val/hateful_memes/accuracy: 0.6160, val/hateful_memes/binary_f1: 0.5026, val/hateful_memes/roc_auc: 0.6909, num_updates: 5200, epoch: 20, iterations: 5200, max_updates: 10000, val_time: 35s 579ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:39:33 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:39:33 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:39:33 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:39:33 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:39:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:39:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:39:43 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:39:56 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:40:10 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:40:10 | mmf.trainers.callbacks.logistics: progress: 5400/10000, val/hateful_memes/cross_entropy: 2.5427, val/total_loss: 2.5427, val/hateful_memes/accuracy: 0.5900, val/hateful_memes/binary_f1: 0.4058, val/hateful_memes/roc_auc: 0.6998, num_updates: 5400, epoch: 21, iterations: 5400, max_updates: 10000, val_time: 36s 537ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:42:44 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T21:42:44 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:42:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:43:11 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:43:11 | mmf.trainers.callbacks.logistics: progress: 5500/10000, train/hateful_memes/cross_entropy: 0.0660, train/hateful_memes/cross_entropy/avg: 0.2344, train/total_loss: 0.0660, train/total_loss/avg: 0.2344, max mem: 9428.0, experiment: run, epoch: 21, num_updates: 5500, iterations: 5500, max_updates: 10000, lr: 0.00001, ups: 2.78, time: 03m 945ms, time_since_start: 02h 47m 13s 840ms, eta: 29m 18s 795ms
+2023-04-08T21:45:45 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:45:45 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:45:45 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:45:45 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:45:55 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:45:55 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:45:56 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:46:08 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:46:21 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:46:21 | mmf.trainers.callbacks.logistics: progress: 5600/10000, val/hateful_memes/cross_entropy: 2.6975, val/total_loss: 2.6975, val/hateful_memes/accuracy: 0.6000, val/hateful_memes/binary_f1: 0.4565, val/hateful_memes/roc_auc: 0.6911, num_updates: 5600, epoch: 22, iterations: 5600, max_updates: 10000, val_time: 35s 763ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:51:26 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:51:26 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:51:26 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:51:26 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:51:35 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:51:35 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:51:36 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:51:49 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:52:01 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:52:01 | mmf.trainers.callbacks.logistics: progress: 5800/10000, val/hateful_memes/cross_entropy: 2.4752, val/total_loss: 2.4752, val/hateful_memes/accuracy: 0.6040, val/hateful_memes/binary_f1: 0.4762, val/hateful_memes/roc_auc: 0.6912, num_updates: 5800, epoch: 22, iterations: 5800, max_updates: 10000, val_time: 35s 125ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T21:57:06 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T21:57:06 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:57:18 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:57:30 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:57:30 | mmf.trainers.callbacks.logistics: progress: 6000/10000, train/hateful_memes/cross_entropy: 0.0430, train/hateful_memes/cross_entropy/avg: 0.2153, train/total_loss: 0.0430, train/total_loss/avg: 0.2153, max mem: 9428.0, experiment: run, epoch: 23, num_updates: 6000, iterations: 6000, max_updates: 10000, lr: 0.00001, ups: 1.52, time: 05m 29s 502ms, time_since_start: 03h 01m 33s 436ms, eta: 47m 26s 898ms
+2023-04-08T21:57:30 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T21:57:30 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T21:57:30 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T21:57:30 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T21:57:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T21:57:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T21:57:43 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T21:57:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T21:58:10 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T21:58:10 | mmf.trainers.callbacks.logistics: progress: 6000/10000, val/hateful_memes/cross_entropy: 2.3190, val/total_loss: 2.3190, val/hateful_memes/accuracy: 0.6380, val/hateful_memes/binary_f1: 0.5394, val/hateful_memes/roc_auc: 0.7016, num_updates: 6000, epoch: 23, iterations: 6000, max_updates: 10000, val_time: 39s 408ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:03:15 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:03:15 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:03:15 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:03:15 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:03:24 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:03:24 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:03:25 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:03:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:03:51 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:03:51 | mmf.trainers.callbacks.logistics: progress: 6200/10000, val/hateful_memes/cross_entropy: 2.7443, val/total_loss: 2.7443, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.4796, val/hateful_memes/roc_auc: 0.6939, num_updates: 6200, epoch: 24, iterations: 6200, max_updates: 10000, val_time: 36s 198ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:08:55 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:08:55 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:08:55 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:08:55 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:09:04 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:09:04 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:09:05 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:09:18 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:09:31 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:09:31 | mmf.trainers.callbacks.logistics: progress: 6400/10000, val/hateful_memes/cross_entropy: 2.4106, val/total_loss: 2.4106, val/hateful_memes/accuracy: 0.6420, val/hateful_memes/binary_f1: 0.5602, val/hateful_memes/roc_auc: 0.6935, num_updates: 6400, epoch: 25, iterations: 6400, max_updates: 10000, val_time: 36s 064ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:12:05 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T22:12:05 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:12:17 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:12:30 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:12:30 | mmf.trainers.callbacks.logistics: progress: 6500/10000, train/hateful_memes/cross_entropy: 0.0430, train/hateful_memes/cross_entropy/avg: 0.1992, train/total_loss: 0.0430, train/total_loss/avg: 0.1992, max mem: 9428.0, experiment: run, epoch: 25, num_updates: 6500, iterations: 6500, max_updates: 10000, lr: 0., ups: 2.81, time: 02m 58s 851ms, time_since_start: 03h 16m 32s 838ms, eta: 22m 32s 116ms
+2023-04-08T22:15:03 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:15:03 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:15:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:15:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:15:13 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:15:13 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:15:13 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:15:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:15:38 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:15:38 | mmf.trainers.callbacks.logistics: progress: 6600/10000, val/hateful_memes/cross_entropy: 2.9499, val/total_loss: 2.9499, val/hateful_memes/accuracy: 0.6060, val/hateful_memes/binary_f1: 0.4513, val/hateful_memes/roc_auc: 0.6879, num_updates: 6600, epoch: 25, iterations: 6600, max_updates: 10000, val_time: 34s 969ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:20:42 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:20:42 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:20:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:20:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:20:52 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:20:52 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:20:53 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:21:05 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:21:18 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:21:18 | mmf.trainers.callbacks.logistics: progress: 6800/10000, val/hateful_memes/cross_entropy: 2.6929, val/total_loss: 2.6929, val/hateful_memes/accuracy: 0.6120, val/hateful_memes/binary_f1: 0.4670, val/hateful_memes/roc_auc: 0.6925, num_updates: 6800, epoch: 26, iterations: 6800, max_updates: 10000, val_time: 35s 394ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:26:22 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T22:26:22 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:26:35 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:26:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:26:47 | mmf.trainers.callbacks.logistics: progress: 7000/10000, train/hateful_memes/cross_entropy: 0.0327, train/hateful_memes/cross_entropy/avg: 0.1851, train/total_loss: 0.0327, train/total_loss/avg: 0.1851, max mem: 9428.0, experiment: run, epoch: 27, num_updates: 7000, iterations: 7000, max_updates: 10000, lr: 0., ups: 1.52, time: 05m 29s 644ms, time_since_start: 03h 30m 50s 661ms, eta: 35m 36s 095ms
+2023-04-08T22:26:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:26:48 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:26:48 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:26:48 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:26:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:26:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:27:00 | mmf.trainers.callbacks.logistics: progress: 7000/10000, val/hateful_memes/cross_entropy: 2.5456, val/total_loss: 2.5456, val/hateful_memes/accuracy: 0.6360, val/hateful_memes/binary_f1: 0.5427, val/hateful_memes/roc_auc: 0.6973, num_updates: 7000, epoch: 27, iterations: 7000, max_updates: 10000, val_time: 12s 326ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:32:05 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:32:05 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:32:05 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:32:05 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:32:16 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:32:16 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:32:17 | mmf.trainers.callbacks.logistics: progress: 7200/10000, val/hateful_memes/cross_entropy: 2.7520, val/total_loss: 2.7520, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5066, val/hateful_memes/roc_auc: 0.6858, num_updates: 7200, epoch: 28, iterations: 7200, max_updates: 10000, val_time: 11s 970ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:37:18 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:37:18 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:37:18 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:37:18 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:37:28 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:37:28 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:37:28 | mmf.trainers.callbacks.logistics: progress: 7400/10000, val/hateful_memes/cross_entropy: 2.6826, val/total_loss: 2.6826, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5040, val/hateful_memes/roc_auc: 0.6839, num_updates: 7400, epoch: 28, iterations: 7400, max_updates: 10000, val_time: 10s 489ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:39:59 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T22:39:59 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:40:11 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:40:23 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:40:23 | mmf.trainers.callbacks.logistics: progress: 7500/10000, train/hateful_memes/cross_entropy: 0.0327, train/hateful_memes/cross_entropy/avg: 0.1728, train/total_loss: 0.0327, train/total_loss/avg: 0.1728, max mem: 9428.0, experiment: run, epoch: 29, num_updates: 7500, iterations: 7500, max_updates: 10000, lr: 0., ups: 2.86, time: 02m 55s 186ms, time_since_start: 03h 44m 26s 572ms, eta: 15m 46s 005ms
+2023-04-08T22:42:58 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:42:58 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:42:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:42:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:43:07 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:43:07 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:43:08 | mmf.trainers.callbacks.logistics: progress: 7600/10000, val/hateful_memes/cross_entropy: 2.6602, val/total_loss: 2.6602, val/hateful_memes/accuracy: 0.6300, val/hateful_memes/binary_f1: 0.5144, val/hateful_memes/roc_auc: 0.6920, num_updates: 7600, epoch: 29, iterations: 7600, max_updates: 10000, val_time: 10s 354ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:48:08 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:48:08 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:48:08 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:48:08 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:48:19 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:48:19 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:48:20 | mmf.trainers.callbacks.logistics: progress: 7800/10000, val/hateful_memes/cross_entropy: 2.6902, val/total_loss: 2.6902, val/hateful_memes/accuracy: 0.6340, val/hateful_memes/binary_f1: 0.5296, val/hateful_memes/roc_auc: 0.6854, num_updates: 7800, epoch: 30, iterations: 7800, max_updates: 10000, val_time: 11s 365ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:53:21 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T22:53:21 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T22:53:34 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T22:53:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T22:53:47 | mmf.trainers.callbacks.logistics: progress: 8000/10000, train/hateful_memes/cross_entropy: 0.0199, train/hateful_memes/cross_entropy/avg: 0.1632, train/total_loss: 0.0199, train/total_loss/avg: 0.1632, max mem: 9428.0, experiment: run, epoch: 31, num_updates: 8000, iterations: 8000, max_updates: 10000, lr: 0., ups: 1.53, time: 05m 27s 475ms, time_since_start: 03h 57m 50s 448ms, eta: 23m 34s 695ms
+2023-04-08T22:53:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:53:47 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:53:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:53:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:54:00 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:54:00 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:54:01 | mmf.trainers.callbacks.logistics: progress: 8000/10000, val/hateful_memes/cross_entropy: 2.9163, val/total_loss: 2.9163, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.4879, val/hateful_memes/roc_auc: 0.6927, num_updates: 8000, epoch: 31, iterations: 8000, max_updates: 10000, val_time: 13s 608ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T22:59:04 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T22:59:04 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T22:59:04 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T22:59:04 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T22:59:14 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T22:59:14 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T22:59:15 | mmf.trainers.callbacks.logistics: progress: 8200/10000, val/hateful_memes/cross_entropy: 2.8427, val/total_loss: 2.8427, val/hateful_memes/accuracy: 0.6200, val/hateful_memes/binary_f1: 0.4947, val/hateful_memes/roc_auc: 0.6971, num_updates: 8200, epoch: 31, iterations: 8200, max_updates: 10000, val_time: 10s 355ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:04:15 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:04:15 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:04:15 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:04:15 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:04:26 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:04:26 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:04:26 | mmf.trainers.callbacks.logistics: progress: 8400/10000, val/hateful_memes/cross_entropy: 2.6248, val/total_loss: 2.6248, val/hateful_memes/accuracy: 0.6260, val/hateful_memes/binary_f1: 0.5337, val/hateful_memes/roc_auc: 0.6917, num_updates: 8400, epoch: 32, iterations: 8400, max_updates: 10000, val_time: 11s 103ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:06:56 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T23:06:56 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T23:07:09 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T23:07:22 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T23:07:22 | mmf.trainers.callbacks.logistics: progress: 8500/10000, train/hateful_memes/cross_entropy: 0.0199, train/hateful_memes/cross_entropy/avg: 0.1536, train/total_loss: 0.0199, train/total_loss/avg: 0.1536, max mem: 9428.0, experiment: run, epoch: 32, num_updates: 8500, iterations: 8500, max_updates: 10000, lr: 0., ups: 2.86, time: 02m 55s 460ms, time_since_start: 04h 11m 25s 046ms, eta: 09m 28s 491ms
+2023-04-08T23:09:57 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:09:57 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:09:57 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:09:57 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:10:07 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:10:07 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:10:08 | mmf.trainers.callbacks.logistics: progress: 8600/10000, val/hateful_memes/cross_entropy: 3.1484, val/total_loss: 3.1484, val/hateful_memes/accuracy: 0.6120, val/hateful_memes/binary_f1: 0.4757, val/hateful_memes/roc_auc: 0.6866, num_updates: 8600, epoch: 33, iterations: 8600, max_updates: 10000, val_time: 10s 698ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:15:07 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:15:07 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:15:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:15:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:15:17 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:15:17 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:15:17 | mmf.trainers.callbacks.logistics: progress: 8800/10000, val/hateful_memes/cross_entropy: 2.9919, val/total_loss: 2.9919, val/hateful_memes/accuracy: 0.6220, val/hateful_memes/binary_f1: 0.4960, val/hateful_memes/roc_auc: 0.6910, num_updates: 8800, epoch: 34, iterations: 8800, max_updates: 10000, val_time: 09s 845ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:20:37 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T23:20:37 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T23:20:50 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T23:21:02 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T23:21:02 | mmf.trainers.callbacks.logistics: progress: 9000/10000, train/hateful_memes/cross_entropy: 0.0180, train/hateful_memes/cross_entropy/avg: 0.1452, train/total_loss: 0.0180, train/total_loss/avg: 0.1452, max mem: 9428.0, experiment: run, epoch: 34, num_updates: 9000, iterations: 9000, max_updates: 10000, lr: 0., ups: 1.45, time: 05m 45s 452ms, time_since_start: 04h 25m 05s 631ms, eta: 12m 26s 178ms
+2023-04-08T23:21:02 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:21:03 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:21:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:21:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:21:15 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:21:15 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:21:15 | mmf.trainers.callbacks.logistics: progress: 9000/10000, val/hateful_memes/cross_entropy: 3.0861, val/total_loss: 3.0861, val/hateful_memes/accuracy: 0.6160, val/hateful_memes/binary_f1: 0.4839, val/hateful_memes/roc_auc: 0.6928, num_updates: 9000, epoch: 34, iterations: 9000, max_updates: 10000, val_time: 12s 728ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:26:19 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:26:19 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:26:19 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:26:19 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:26:28 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:26:28 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:26:29 | mmf.trainers.callbacks.logistics: progress: 9200/10000, val/hateful_memes/cross_entropy: 2.9158, val/total_loss: 2.9158, val/hateful_memes/accuracy: 0.6300, val/hateful_memes/binary_f1: 0.5144, val/hateful_memes/roc_auc: 0.6939, num_updates: 9200, epoch: 35, iterations: 9200, max_updates: 10000, val_time: 10s 233ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:31:29 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:31:29 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:31:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:31:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:31:39 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:31:39 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:31:39 | mmf.trainers.callbacks.logistics: progress: 9400/10000, val/hateful_memes/cross_entropy: 3.0805, val/total_loss: 3.0805, val/hateful_memes/accuracy: 0.6160, val/hateful_memes/binary_f1: 0.4866, val/hateful_memes/roc_auc: 0.6916, num_updates: 9400, epoch: 36, iterations: 9400, max_updates: 10000, val_time: 10s 218ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:34:09 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T23:34:09 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T23:34:22 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T23:34:36 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T23:34:36 | mmf.trainers.callbacks.logistics: progress: 9500/10000, train/hateful_memes/cross_entropy: 0.0180, train/hateful_memes/cross_entropy/avg: 0.1376, train/total_loss: 0.0180, train/total_loss/avg: 0.1376, max mem: 9428.0, experiment: run, epoch: 36, num_updates: 9500, iterations: 9500, max_updates: 10000, lr: 0., ups: 2.84, time: 02m 56s 376ms, time_since_start: 04h 38m 39s 001ms, eta: 03m 10s 486ms
+2023-04-08T23:37:10 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:37:10 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:37:10 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:37:10 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:37:21 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:37:21 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:37:21 | mmf.trainers.callbacks.logistics: progress: 9600/10000, val/hateful_memes/cross_entropy: 3.2142, val/total_loss: 3.2142, val/hateful_memes/accuracy: 0.6120, val/hateful_memes/binary_f1: 0.4757, val/hateful_memes/roc_auc: 0.6880, num_updates: 9600, epoch: 37, iterations: 9600, max_updates: 10000, val_time: 10s 999ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:42:21 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:42:21 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:42:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:42:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:42:32 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:42:32 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:42:32 | mmf.trainers.callbacks.logistics: progress: 9800/10000, val/hateful_memes/cross_entropy: 3.1747, val/total_loss: 3.1747, val/hateful_memes/accuracy: 0.6140, val/hateful_memes/binary_f1: 0.4798, val/hateful_memes/roc_auc: 0.6895, num_updates: 9800, epoch: 37, iterations: 9800, max_updates: 10000, val_time: 11s 182ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:47:33 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-08T23:47:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-08T23:47:46 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-08T23:47:58 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-08T23:47:58 | mmf.trainers.callbacks.logistics: progress: 10000/10000, train/hateful_memes/cross_entropy: 0.0164, train/hateful_memes/cross_entropy/avg: 0.1307, train/total_loss: 0.0164, train/total_loss/avg: 0.1307, max mem: 9428.0, experiment: run, epoch: 38, num_updates: 10000, iterations: 10000, max_updates: 10000, lr: 0., ups: 1.54, time: 05m 25s 417ms, time_since_start: 04h 52m 822ms, eta: 0ms
+2023-04-08T23:47:58 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-08T23:47:58 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:47:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:47:58 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-08T23:48:10 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:48:10 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:48:10 | mmf.trainers.callbacks.logistics: progress: 10000/10000, val/hateful_memes/cross_entropy: 3.1378, val/total_loss: 3.1378, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.4907, val/hateful_memes/roc_auc: 0.6903, num_updates: 10000, epoch: 38, iterations: 10000, max_updates: 10000, val_time: 12s 806ms, best_update: 2800, best_iteration: 2800, best_val/hateful_memes/roc_auc: 0.710272
+2023-04-08T23:48:11 | mmf.trainers.core.training_loop: Stepping into final validation check
+2023-04-08T23:48:11 | mmf.utils.checkpoint: Restoring checkpoint
+2023-04-08T23:48:11 | mmf.utils.checkpoint: Loading checkpoint
+2023-04-08T23:48:33 | mmf.utils.checkpoint: Checkpoint loaded.
+2023-04-08T23:48:33 | mmf.utils.checkpoint: Current num updates: 2800
+2023-04-08T23:48:33 | mmf.utils.checkpoint: Current iteration: 2800
+2023-04-08T23:48:33 | mmf.utils.checkpoint: Current epoch: 11
+2023-04-08T23:48:47 | mmf.trainers.mmf_trainer: Starting inference on val set
+2023-04-08T23:48:47 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-08T23:48:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-08T23:48:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+100% 16/16 [00:11<00:00,  1.34it/s]
+2023-04-08T23:48:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-08T23:48:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-08T23:49:00 | mmf.trainers.callbacks.logistics: progress: 2800/10000, val/hateful_memes/cross_entropy: 1.3997, val/total_loss: 1.3997, val/hateful_memes/accuracy: 0.6180, val/hateful_memes/binary_f1: 0.5140, val/hateful_memes/roc_auc: 0.7103
+2023-04-08T23:49:00 | mmf.trainers.callbacks.logistics: Finished run in 04h 53m 03s 524ms

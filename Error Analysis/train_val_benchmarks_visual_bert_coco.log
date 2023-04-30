@@ -1,0 +1,1319 @@
+2023-04-02 16:06:07.114665: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-02 16:06:09.065539: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_TENSORBOARD_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option config to projects/visual_bert/configs/hateful_memes/from_coco.yaml
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option model to visual_bert
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option datasets to hateful_memes
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option run_type to train_val
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.train[0] to hateful_memes/defaults/annotations/train.jsonl
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.val[0] to hateful_memes/defaults/annotations/dev.jsonl
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option dataset_config.hateful_memes.annotations.test[0] to hateful_memes/defaults/annotations/test.jsonl
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.batch_size to 32
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.tensorboard to True
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option env.tensorboard_logdir to logs/fit/
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.checkpoint_interval to 100
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.evaluation_interval to 100
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option checkpoint.max_to_keep to 1
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.max_updates to 3000
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.log_interval to 100
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option training.lr_ratio to 0.3
+2023-04-02T16:06:20 | mmf.utils.configuration: Overriding option checkpoint.resume_zoo to visual_bert.pretrained.coco.fifty_pc
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_LOG_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_REPORT_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/usr/local/lib/python3.9/dist-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_WANDB_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2023-04-02T16:06:20 | mmf: Logging to: ./save/train.log
+2023-04-02T16:06:20 | mmf_cli.run: Namespace(config_override=None, local_rank=None, opts=['config=projects/visual_bert/configs/hateful_memes/from_coco.yaml', 'model=visual_bert', 'dataset=hateful_memes', 'run_type=train_val', 'dataset_config.hateful_memes.annotations.train[0]=hateful_memes/defaults/annotations/train.jsonl', 'dataset_config.hateful_memes.annotations.val[0]=hateful_memes/defaults/annotations/dev.jsonl', 'dataset_config.hateful_memes.annotations.test[0]=hateful_memes/defaults/annotations/test.jsonl', 'training.batch_size=32', 'training.tensorboard=True', 'env.tensorboard_logdir=logs/fit/', 'training.checkpoint_interval=100', 'training.evaluation_interval=100', 'checkpoint.max_to_keep=1', 'training.max_updates=3000', 'training.log_interval=100', 'training.lr_ratio=0.3', 'checkpoint.resume_zoo=visual_bert.pretrained.coco.fifty_pc'])
+2023-04-02T16:06:20 | mmf_cli.run: Torch version: 1.11.0+cu102
+2023-04-02T16:06:20 | mmf.utils.general: CUDA Device 0 is: Tesla T4
+2023-04-02T16:06:20 | mmf_cli.run: Using seed 20440273
+2023-04-02T16:06:20 | mmf.trainers.mmf_trainer: Loading datasets
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/features/features_2020_10_01.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/features/features.tar.gz ]
+Downloading features.tar.gz: 100% 10.3G/10.3G [02:09<00:00, 79.6MB/s]
+[ Starting checksum for features.tar.gz]
+[ Checksum successful for features.tar.gz]
+Unpacking features.tar.gz
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz to /root/.cache/torch/mmf/data/datasets/hateful_memes/defaults/extras.tar.gz ]
+Downloading extras.tar.gz: 100% 211k/211k [00:00<00:00, 1.48MB/s]
+[ Starting checksum for extras.tar.gz]
+[ Checksum successful for extras.tar.gz]
+Unpacking extras.tar.gz
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmptzt957dy
+Downloading: 100% 28.0/28.0 [00:00<00:00, 22.5kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json in cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+creating metadata file for /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+https://huggingface.co/bert-base-uncased/resolve/main/config.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmpmo66jntl
+Downloading: 100% 570/570 [00:00<00:00, 324kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/config.json in cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+creating metadata file for /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmprmymlguz
+Downloading: 100% 232k/232k [00:00<00:00, 938kB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt in cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+creating metadata file for /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json not found in cache or force_download set to True, downloading to /root/.cache/huggingface/transformers/tmp3tpr5l_z
+Downloading: 100% 466k/466k [00:00<00:00, 1.50MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json in cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+creating metadata file for /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt from cache at /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json from cache at /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+loading file https://huggingface.co/bert-base-uncased/resolve/main/added_tokens.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/special_tokens_map.json from cache at None
+loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json from cache at /root/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79
+loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+WARNING 2023-04-02T16:12:25 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:12:25 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:12:25 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-02T16:12:25 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-02T16:12:25 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2023-04-02T16:12:25 | mmf.trainers.mmf_trainer: Loading model
+2023-04-02T16:12:25 | torch.distributed.nn.jit.instantiator: Created a temporary directory at /tmp/tmpzoz32f93
+2023-04-02T16:12:25 | torch.distributed.nn.jit.instantiator: Writing /tmp/tmpzoz32f93/_remote_module_non_sriptable.py
+Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "bert_model_name": "bert-base-uncased",
+  "bypass_transformer": false,
+  "classifier_dropout": null,
+  "embedding_strategy": "plain",
+  "finetune_lr_multiplier": 1,
+  "freeze_base": false,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "losses": [
+    "cross_entropy"
+  ],
+  "max_position_embeddings": 512,
+  "model": "visual_bert",
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "pooler_strategy": "default",
+  "position_embedding_type": "absolute",
+  "random_initialize": false,
+  "special_visual_initialize": true,
+  "training_head_type": "classification",
+  "transformers_version": "4.10.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "visual_embedding_dim": 2048,
+  "vocab_size": 30522,
+  "zerobias": false
+}
+
+https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/torch/mmf/distributed_-1/tmpba0otn16
+Downloading: 100% 440M/440M [00:07<00:00, 59.3MB/s]
+storing https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin in cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+creating metadata file for /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+loading weights file https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin from cache at /root/.cache/torch/mmf/distributed_-1/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing VisualBERTBase: ['cls.predictions.transform.dense.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.bias']
+- This IS expected if you are initializing VisualBERTBase from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing VisualBERTBase from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.token_type_embeddings_visual.weight', 'bert.embeddings.projection.bias', 'bert.embeddings.projection.weight', 'bert.embeddings.position_embeddings_visual.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2023-04-02T16:12:44 | mmf.trainers.mmf_trainer: Loading optimizer
+2023-04-02T16:12:44 | mmf.trainers.mmf_trainer: Loading metrics
+2023-04-02T16:12:44 | mmf.utils.checkpoint: Loading checkpoint
+[ Downloading: https://dl.fbaipublicfiles.com/mmf/data/models/visual_bert/visual_bert.pretrained.coco_fifty_pc.tar.gz to /root/.cache/torch/mmf/data/models/visual_bert.pretrained.coco.fifty_pc/visual_bert.pretrained.coco_fifty_pc.tar.gz ]
+Downloading visual_bert.pretrained.coco_fifty_pc.tar.gz: 100% 415M/415M [00:06<00:00, 62.5MB/s]
+[ Starting checksum for visual_bert.pretrained.coco_fifty_pc.tar.gz]
+[ Checksum successful for visual_bert.pretrained.coco_fifty_pc.tar.gz]
+Unpacking visual_bert.pretrained.coco_fifty_pc.tar.gz
+WARNING 2023-04-02T16:12:57 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2023-04-02T16:12:57 | mmf: Key distributed is not present in registry, returning default value of None
+WARNING 2023-04-02T16:12:57 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2023-04-02T16:12:57 | mmf: Key distributed is not present in registry, returning default value of None
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.word_embeddings.weight from model.bert.embeddings.word_embeddings.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.position_embeddings.weight from model.bert.embeddings.position_embeddings.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.token_type_embeddings.weight from model.bert.embeddings.token_type_embeddings.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.LayerNorm.weight from model.bert.embeddings.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.LayerNorm.bias from model.bert.embeddings.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.token_type_embeddings_visual.weight from model.bert.embeddings.token_type_embeddings_visual.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.position_embeddings_visual.weight from model.bert.embeddings.position_embeddings_visual.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.projection.weight from model.bert.embeddings.projection.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.embeddings.projection.bias from model.bert.embeddings.projection.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.query.weight from model.bert.encoder.layer.0.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.query.bias from model.bert.encoder.layer.0.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.key.weight from model.bert.encoder.layer.0.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.key.bias from model.bert.encoder.layer.0.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.value.weight from model.bert.encoder.layer.0.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.self.value.bias from model.bert.encoder.layer.0.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.dense.weight from model.bert.encoder.layer.0.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.dense.bias from model.bert.encoder.layer.0.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.LayerNorm.weight from model.bert.encoder.layer.0.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.attention.output.LayerNorm.bias from model.bert.encoder.layer.0.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.intermediate.dense.weight from model.bert.encoder.layer.0.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.intermediate.dense.bias from model.bert.encoder.layer.0.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.dense.weight from model.bert.encoder.layer.0.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.dense.bias from model.bert.encoder.layer.0.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.LayerNorm.weight from model.bert.encoder.layer.0.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.0.output.LayerNorm.bias from model.bert.encoder.layer.0.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.query.weight from model.bert.encoder.layer.1.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.query.bias from model.bert.encoder.layer.1.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.key.weight from model.bert.encoder.layer.1.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.key.bias from model.bert.encoder.layer.1.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.value.weight from model.bert.encoder.layer.1.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.self.value.bias from model.bert.encoder.layer.1.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.dense.weight from model.bert.encoder.layer.1.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.dense.bias from model.bert.encoder.layer.1.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.LayerNorm.weight from model.bert.encoder.layer.1.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.attention.output.LayerNorm.bias from model.bert.encoder.layer.1.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.intermediate.dense.weight from model.bert.encoder.layer.1.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.intermediate.dense.bias from model.bert.encoder.layer.1.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.dense.weight from model.bert.encoder.layer.1.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.dense.bias from model.bert.encoder.layer.1.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.LayerNorm.weight from model.bert.encoder.layer.1.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.1.output.LayerNorm.bias from model.bert.encoder.layer.1.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.query.weight from model.bert.encoder.layer.2.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.query.bias from model.bert.encoder.layer.2.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.key.weight from model.bert.encoder.layer.2.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.key.bias from model.bert.encoder.layer.2.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.value.weight from model.bert.encoder.layer.2.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.self.value.bias from model.bert.encoder.layer.2.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.dense.weight from model.bert.encoder.layer.2.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.dense.bias from model.bert.encoder.layer.2.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.LayerNorm.weight from model.bert.encoder.layer.2.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.attention.output.LayerNorm.bias from model.bert.encoder.layer.2.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.intermediate.dense.weight from model.bert.encoder.layer.2.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.intermediate.dense.bias from model.bert.encoder.layer.2.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.dense.weight from model.bert.encoder.layer.2.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.dense.bias from model.bert.encoder.layer.2.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.LayerNorm.weight from model.bert.encoder.layer.2.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.2.output.LayerNorm.bias from model.bert.encoder.layer.2.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.query.weight from model.bert.encoder.layer.3.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.query.bias from model.bert.encoder.layer.3.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.key.weight from model.bert.encoder.layer.3.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.key.bias from model.bert.encoder.layer.3.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.value.weight from model.bert.encoder.layer.3.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.self.value.bias from model.bert.encoder.layer.3.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.dense.weight from model.bert.encoder.layer.3.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.dense.bias from model.bert.encoder.layer.3.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.LayerNorm.weight from model.bert.encoder.layer.3.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.attention.output.LayerNorm.bias from model.bert.encoder.layer.3.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.intermediate.dense.weight from model.bert.encoder.layer.3.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.intermediate.dense.bias from model.bert.encoder.layer.3.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.dense.weight from model.bert.encoder.layer.3.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.dense.bias from model.bert.encoder.layer.3.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.LayerNorm.weight from model.bert.encoder.layer.3.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.3.output.LayerNorm.bias from model.bert.encoder.layer.3.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.query.weight from model.bert.encoder.layer.4.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.query.bias from model.bert.encoder.layer.4.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.key.weight from model.bert.encoder.layer.4.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.key.bias from model.bert.encoder.layer.4.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.value.weight from model.bert.encoder.layer.4.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.self.value.bias from model.bert.encoder.layer.4.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.dense.weight from model.bert.encoder.layer.4.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.dense.bias from model.bert.encoder.layer.4.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.LayerNorm.weight from model.bert.encoder.layer.4.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.attention.output.LayerNorm.bias from model.bert.encoder.layer.4.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.intermediate.dense.weight from model.bert.encoder.layer.4.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.intermediate.dense.bias from model.bert.encoder.layer.4.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.dense.weight from model.bert.encoder.layer.4.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.dense.bias from model.bert.encoder.layer.4.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.LayerNorm.weight from model.bert.encoder.layer.4.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.4.output.LayerNorm.bias from model.bert.encoder.layer.4.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.query.weight from model.bert.encoder.layer.5.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.query.bias from model.bert.encoder.layer.5.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.key.weight from model.bert.encoder.layer.5.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.key.bias from model.bert.encoder.layer.5.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.value.weight from model.bert.encoder.layer.5.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.self.value.bias from model.bert.encoder.layer.5.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.dense.weight from model.bert.encoder.layer.5.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.dense.bias from model.bert.encoder.layer.5.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.LayerNorm.weight from model.bert.encoder.layer.5.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.attention.output.LayerNorm.bias from model.bert.encoder.layer.5.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.intermediate.dense.weight from model.bert.encoder.layer.5.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.intermediate.dense.bias from model.bert.encoder.layer.5.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.dense.weight from model.bert.encoder.layer.5.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.dense.bias from model.bert.encoder.layer.5.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.LayerNorm.weight from model.bert.encoder.layer.5.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.5.output.LayerNorm.bias from model.bert.encoder.layer.5.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.query.weight from model.bert.encoder.layer.6.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.query.bias from model.bert.encoder.layer.6.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.key.weight from model.bert.encoder.layer.6.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.key.bias from model.bert.encoder.layer.6.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.value.weight from model.bert.encoder.layer.6.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.self.value.bias from model.bert.encoder.layer.6.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.dense.weight from model.bert.encoder.layer.6.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.dense.bias from model.bert.encoder.layer.6.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.LayerNorm.weight from model.bert.encoder.layer.6.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.attention.output.LayerNorm.bias from model.bert.encoder.layer.6.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.intermediate.dense.weight from model.bert.encoder.layer.6.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.intermediate.dense.bias from model.bert.encoder.layer.6.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.dense.weight from model.bert.encoder.layer.6.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.dense.bias from model.bert.encoder.layer.6.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.LayerNorm.weight from model.bert.encoder.layer.6.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.6.output.LayerNorm.bias from model.bert.encoder.layer.6.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.query.weight from model.bert.encoder.layer.7.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.query.bias from model.bert.encoder.layer.7.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.key.weight from model.bert.encoder.layer.7.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.key.bias from model.bert.encoder.layer.7.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.value.weight from model.bert.encoder.layer.7.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.self.value.bias from model.bert.encoder.layer.7.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.dense.weight from model.bert.encoder.layer.7.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.dense.bias from model.bert.encoder.layer.7.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.LayerNorm.weight from model.bert.encoder.layer.7.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.attention.output.LayerNorm.bias from model.bert.encoder.layer.7.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.intermediate.dense.weight from model.bert.encoder.layer.7.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.intermediate.dense.bias from model.bert.encoder.layer.7.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.dense.weight from model.bert.encoder.layer.7.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.dense.bias from model.bert.encoder.layer.7.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.LayerNorm.weight from model.bert.encoder.layer.7.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.7.output.LayerNorm.bias from model.bert.encoder.layer.7.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.query.weight from model.bert.encoder.layer.8.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.query.bias from model.bert.encoder.layer.8.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.key.weight from model.bert.encoder.layer.8.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.key.bias from model.bert.encoder.layer.8.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.value.weight from model.bert.encoder.layer.8.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.self.value.bias from model.bert.encoder.layer.8.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.dense.weight from model.bert.encoder.layer.8.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.dense.bias from model.bert.encoder.layer.8.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.LayerNorm.weight from model.bert.encoder.layer.8.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.attention.output.LayerNorm.bias from model.bert.encoder.layer.8.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.intermediate.dense.weight from model.bert.encoder.layer.8.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.intermediate.dense.bias from model.bert.encoder.layer.8.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.dense.weight from model.bert.encoder.layer.8.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.dense.bias from model.bert.encoder.layer.8.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.LayerNorm.weight from model.bert.encoder.layer.8.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.8.output.LayerNorm.bias from model.bert.encoder.layer.8.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.query.weight from model.bert.encoder.layer.9.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.query.bias from model.bert.encoder.layer.9.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.key.weight from model.bert.encoder.layer.9.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.key.bias from model.bert.encoder.layer.9.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.value.weight from model.bert.encoder.layer.9.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.self.value.bias from model.bert.encoder.layer.9.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.dense.weight from model.bert.encoder.layer.9.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.dense.bias from model.bert.encoder.layer.9.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.LayerNorm.weight from model.bert.encoder.layer.9.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.attention.output.LayerNorm.bias from model.bert.encoder.layer.9.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.intermediate.dense.weight from model.bert.encoder.layer.9.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.intermediate.dense.bias from model.bert.encoder.layer.9.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.dense.weight from model.bert.encoder.layer.9.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.dense.bias from model.bert.encoder.layer.9.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.LayerNorm.weight from model.bert.encoder.layer.9.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.9.output.LayerNorm.bias from model.bert.encoder.layer.9.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.query.weight from model.bert.encoder.layer.10.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.query.bias from model.bert.encoder.layer.10.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.key.weight from model.bert.encoder.layer.10.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.key.bias from model.bert.encoder.layer.10.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.value.weight from model.bert.encoder.layer.10.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.self.value.bias from model.bert.encoder.layer.10.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.dense.weight from model.bert.encoder.layer.10.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.dense.bias from model.bert.encoder.layer.10.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.LayerNorm.weight from model.bert.encoder.layer.10.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.attention.output.LayerNorm.bias from model.bert.encoder.layer.10.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.intermediate.dense.weight from model.bert.encoder.layer.10.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.intermediate.dense.bias from model.bert.encoder.layer.10.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.dense.weight from model.bert.encoder.layer.10.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.dense.bias from model.bert.encoder.layer.10.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.LayerNorm.weight from model.bert.encoder.layer.10.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.10.output.LayerNorm.bias from model.bert.encoder.layer.10.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.query.weight from model.bert.encoder.layer.11.attention.self.query.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.query.bias from model.bert.encoder.layer.11.attention.self.query.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.key.weight from model.bert.encoder.layer.11.attention.self.key.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.key.bias from model.bert.encoder.layer.11.attention.self.key.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.value.weight from model.bert.encoder.layer.11.attention.self.value.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.self.value.bias from model.bert.encoder.layer.11.attention.self.value.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.dense.weight from model.bert.encoder.layer.11.attention.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.dense.bias from model.bert.encoder.layer.11.attention.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.LayerNorm.weight from model.bert.encoder.layer.11.attention.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.attention.output.LayerNorm.bias from model.bert.encoder.layer.11.attention.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.intermediate.dense.weight from model.bert.encoder.layer.11.intermediate.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.intermediate.dense.bias from model.bert.encoder.layer.11.intermediate.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.dense.weight from model.bert.encoder.layer.11.output.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.dense.bias from model.bert.encoder.layer.11.output.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.LayerNorm.weight from model.bert.encoder.layer.11.output.LayerNorm.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.encoder.layer.11.output.LayerNorm.bias from model.bert.encoder.layer.11.output.LayerNorm.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.pooler.dense.weight from model.bert.pooler.dense.weight
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Copying model.bert.pooler.dense.bias from model.bert.pooler.dense.bias
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Pretrained model loaded
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Checkpoint loaded.
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Current num updates: 0
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Current iteration: 0
+2023-04-02T16:12:57 | mmf.utils.checkpoint: Current epoch: 0
+2023-04-02T16:12:57 | mmf.trainers.mmf_trainer: ===== Model =====
+2023-04-02T16:12:57 | mmf.trainers.mmf_trainer: VisualBERT(
+  (model): VisualBERTForClassification(
+    (bert): VisualBERTBase(
+      (embeddings): BertVisioLinguisticEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (token_type_embeddings_visual): Embedding(2, 768)
+        (position_embeddings_visual): Embedding(512, 768)
+        (projection): Linear(in_features=2048, out_features=768, bias=True)
+      )
+      (encoder): BertEncoderJit(
+        (layer): ModuleList(
+          (0): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (4): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (5): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (6): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (7): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (8): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (9): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (10): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (11): BertLayerJit(
+            (attention): BertAttentionJit(
+              (self): BertSelfAttentionJit(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+    (classifier): Sequential(
+      (0): BertPredictionHeadTransform(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      )
+      (1): Linear(in_features=768, out_features=2, bias=True)
+    )
+  )
+  (losses): Losses(
+    (losses): ModuleList(
+      (0): MMFLoss(
+        (loss_criterion): CrossEntropyLoss(
+          (loss_fn): CrossEntropyLoss()
+        )
+      )
+    )
+  )
+)
+2023-04-02T16:12:57 | mmf.utils.general: Total Parameters: 112044290. Trained Parameters: 112044290
+2023-04-02T16:12:57 | mmf.trainers.core.training_loop: Starting training...
+2023-04-02T16:15:23 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:15:23 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:15:30 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:15:36 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:15:36 | mmf.trainers.callbacks.logistics: progress: 100/3000, train/hateful_memes/cross_entropy: 0.7367, train/hateful_memes/cross_entropy/avg: 0.7367, train/total_loss: 0.7367, train/total_loss/avg: 0.7367, max mem: 8240.0, experiment: run, epoch: 1, num_updates: 100, iterations: 100, max_updates: 3000, lr: 0., ups: 0.63, time: 02m 39s 130ms, time_since_start: 02m 52s 304ms, eta: 01h 29m 13s 148ms
+2023-04-02T16:15:36 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:15:36 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:15:36 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:15:36 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:15:47 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:15:47 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:15:48 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:15:56 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:16:06 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:16:13 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:16:13 | mmf.trainers.callbacks.logistics: progress: 100/3000, val/hateful_memes/cross_entropy: 0.7444, val/total_loss: 0.7444, val/hateful_memes/accuracy: 0.5020, val/hateful_memes/binary_f1: 0.1075, val/hateful_memes/roc_auc: 0.5309, num_updates: 100, epoch: 1, iterations: 100, max_updates: 3000, val_time: 36s 970ms, best_update: 100, best_iteration: 100, best_val/hateful_memes/roc_auc: 0.530880
+2023-04-02T16:18:49 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:18:49 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:18:56 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:19:02 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:19:02 | mmf.trainers.callbacks.logistics: progress: 200/3000, train/hateful_memes/cross_entropy: 0.5961, train/hateful_memes/cross_entropy/avg: 0.6664, train/total_loss: 0.5961, train/total_loss/avg: 0.6664, max mem: 8277.0, experiment: run, epoch: 1, num_updates: 200, iterations: 200, max_updates: 3000, lr: 0.00001, ups: 0.60, time: 02m 48s 912ms, time_since_start: 06m 18s 266ms, eta: 01h 31m 26s 287ms
+2023-04-02T16:19:02 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:19:02 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:19:02 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:19:02 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:19:13 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:19:13 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:19:14 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:19:20 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:19:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:19:32 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:19:32 | mmf.trainers.callbacks.logistics: progress: 200/3000, val/hateful_memes/cross_entropy: 0.7376, val/total_loss: 0.7376, val/hateful_memes/accuracy: 0.5160, val/hateful_memes/binary_f1: 0.2882, val/hateful_memes/roc_auc: 0.5570, num_updates: 200, epoch: 1, iterations: 200, max_updates: 3000, val_time: 30s 043ms, best_update: 200, best_iteration: 200, best_val/hateful_memes/roc_auc: 0.557024
+2023-04-02T16:22:08 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:22:08 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:22:15 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:22:21 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:22:21 | mmf.trainers.callbacks.logistics: progress: 300/3000, train/hateful_memes/cross_entropy: 0.7214, train/hateful_memes/cross_entropy/avg: 0.6847, train/total_loss: 0.7214, train/total_loss/avg: 0.6847, max mem: 8277.0, experiment: run, epoch: 2, num_updates: 300, iterations: 300, max_updates: 3000, lr: 0.00001, ups: 0.60, time: 02m 48s 828ms, time_since_start: 09m 37s 140ms, eta: 01h 28m 07s 705ms
+2023-04-02T16:22:21 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:22:21 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:22:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:22:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:22:32 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:22:32 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:22:32 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:22:39 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:22:46 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:22:51 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:22:51 | mmf.trainers.callbacks.logistics: progress: 300/3000, val/hateful_memes/cross_entropy: 0.8455, val/total_loss: 0.8455, val/hateful_memes/accuracy: 0.5280, val/hateful_memes/binary_f1: 0.1918, val/hateful_memes/roc_auc: 0.6089, num_updates: 300, epoch: 2, iterations: 300, max_updates: 3000, val_time: 30s 274ms, best_update: 300, best_iteration: 300, best_val/hateful_memes/roc_auc: 0.608896
+2023-04-02T16:25:27 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:25:27 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:25:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:25:44 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:25:44 | mmf.trainers.callbacks.logistics: progress: 400/3000, train/hateful_memes/cross_entropy: 0.5961, train/hateful_memes/cross_entropy/avg: 0.6361, train/total_loss: 0.5961, train/total_loss/avg: 0.6361, max mem: 8277.0, experiment: run, epoch: 2, num_updates: 400, iterations: 400, max_updates: 3000, lr: 0.00001, ups: 0.58, time: 02m 52s 358ms, time_since_start: 12m 59s 774ms, eta: 01h 26m 38s 323ms
+2023-04-02T16:25:44 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:25:44 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:25:44 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:25:44 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:25:54 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:25:54 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:25:54 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:26:01 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:26:07 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:26:13 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:26:13 | mmf.trainers.callbacks.logistics: progress: 400/3000, val/hateful_memes/cross_entropy: 0.7200, val/total_loss: 0.7200, val/hateful_memes/accuracy: 0.5660, val/hateful_memes/binary_f1: 0.3782, val/hateful_memes/roc_auc: 0.6390, num_updates: 400, epoch: 2, iterations: 400, max_updates: 3000, val_time: 29s 192ms, best_update: 400, best_iteration: 400, best_val/hateful_memes/roc_auc: 0.638976
+2023-04-02T16:28:48 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:28:48 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:28:56 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:29:02 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:29:02 | mmf.trainers.callbacks.logistics: progress: 500/3000, train/hateful_memes/cross_entropy: 0.5961, train/hateful_memes/cross_entropy/avg: 0.6252, train/total_loss: 0.5961, train/total_loss/avg: 0.6252, max mem: 8277.0, experiment: run, epoch: 2, num_updates: 500, iterations: 500, max_updates: 3000, lr: 0.00001, ups: 0.60, time: 02m 48s 707ms, time_since_start: 16m 17s 683ms, eta: 01h 21m 32s 513ms
+2023-04-02T16:29:02 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:29:02 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:29:02 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:29:02 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:29:12 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:29:12 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:29:12 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:29:19 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:29:25 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:29:31 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:29:31 | mmf.trainers.callbacks.logistics: progress: 500/3000, val/hateful_memes/cross_entropy: 0.7378, val/total_loss: 0.7378, val/hateful_memes/accuracy: 0.5480, val/hateful_memes/binary_f1: 0.3652, val/hateful_memes/roc_auc: 0.6432, num_updates: 500, epoch: 2, iterations: 500, max_updates: 3000, val_time: 29s 509ms, best_update: 500, best_iteration: 500, best_val/hateful_memes/roc_auc: 0.643200
+2023-04-02T16:32:07 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:32:07 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:32:14 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:32:20 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:32:20 | mmf.trainers.callbacks.logistics: progress: 600/3000, train/hateful_memes/cross_entropy: 0.5817, train/hateful_memes/cross_entropy/avg: 0.5998, train/total_loss: 0.5817, train/total_loss/avg: 0.5998, max mem: 8277.0, experiment: run, epoch: 3, num_updates: 600, iterations: 600, max_updates: 3000, lr: 0.00002, ups: 0.60, time: 02m 48s 679ms, time_since_start: 19m 35s 875ms, eta: 01h 18m 16s 048ms
+2023-04-02T16:32:20 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:32:20 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:32:20 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:32:20 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:32:31 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:32:31 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:32:31 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:32:40 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:32:49 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:32:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:32:57 | mmf.trainers.callbacks.logistics: progress: 600/3000, val/hateful_memes/cross_entropy: 0.7492, val/total_loss: 0.7492, val/hateful_memes/accuracy: 0.5820, val/hateful_memes/binary_f1: 0.4274, val/hateful_memes/roc_auc: 0.6752, num_updates: 600, epoch: 3, iterations: 600, max_updates: 3000, val_time: 37s 045ms, best_update: 600, best_iteration: 600, best_val/hateful_memes/roc_auc: 0.675200
+2023-04-02T16:35:34 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:35:34 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:35:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:35:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:35:47 | mmf.trainers.callbacks.logistics: progress: 700/3000, train/hateful_memes/cross_entropy: 0.5955, train/hateful_memes/cross_entropy/avg: 0.5992, train/total_loss: 0.5955, train/total_loss/avg: 0.5992, max mem: 8277.0, experiment: run, epoch: 3, num_updates: 700, iterations: 700, max_updates: 3000, lr: 0.00002, ups: 0.59, time: 02m 50s 029ms, time_since_start: 23m 02s 952ms, eta: 01h 15m 36s 375ms
+2023-04-02T16:35:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:35:47 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:35:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:35:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:35:57 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:35:57 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:35:58 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:36:06 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:36:16 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:36:24 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:36:24 | mmf.trainers.callbacks.logistics: progress: 700/3000, val/hateful_memes/cross_entropy: 0.7618, val/total_loss: 0.7618, val/hateful_memes/accuracy: 0.5740, val/hateful_memes/binary_f1: 0.3932, val/hateful_memes/roc_auc: 0.6944, num_updates: 700, epoch: 3, iterations: 700, max_updates: 3000, val_time: 36s 855ms, best_update: 700, best_iteration: 700, best_val/hateful_memes/roc_auc: 0.694416
+2023-04-02T16:39:00 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:39:00 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:39:08 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:39:14 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:39:14 | mmf.trainers.callbacks.logistics: progress: 800/3000, train/hateful_memes/cross_entropy: 0.5817, train/hateful_memes/cross_entropy/avg: 0.5755, train/total_loss: 0.5817, train/total_loss/avg: 0.5755, max mem: 8277.0, experiment: run, epoch: 4, num_updates: 800, iterations: 800, max_updates: 3000, lr: 0.00002, ups: 0.59, time: 02m 50s 362ms, time_since_start: 26m 30s 180ms, eta: 01h 12m 27s 649ms
+2023-04-02T16:39:14 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:39:14 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:39:14 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:39:14 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:39:24 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:39:24 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:39:25 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:39:32 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:39:38 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:39:43 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:39:43 | mmf.trainers.callbacks.logistics: progress: 800/3000, val/hateful_memes/cross_entropy: 0.7545, val/total_loss: 0.7545, val/hateful_memes/accuracy: 0.6160, val/hateful_memes/binary_f1: 0.5052, val/hateful_memes/roc_auc: 0.7109, num_updates: 800, epoch: 4, iterations: 800, max_updates: 3000, val_time: 29s 150ms, best_update: 800, best_iteration: 800, best_val/hateful_memes/roc_auc: 0.710944
+2023-04-02T16:42:18 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:42:18 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:42:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:42:32 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:42:32 | mmf.trainers.callbacks.logistics: progress: 900/3000, train/hateful_memes/cross_entropy: 0.5817, train/hateful_memes/cross_entropy/avg: 0.5458, train/total_loss: 0.5817, train/total_loss/avg: 0.5458, max mem: 8277.0, experiment: run, epoch: 4, num_updates: 900, iterations: 900, max_updates: 3000, lr: 0.00002, ups: 0.59, time: 02m 49s 016ms, time_since_start: 29m 48s 372ms, eta: 01h 08m 37s 232ms
+2023-04-02T16:42:32 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:42:32 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:42:32 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:42:32 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:42:42 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:42:42 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:42:43 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:42:50 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:42:56 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:42:56 | mmf.trainers.callbacks.logistics: progress: 900/3000, val/hateful_memes/cross_entropy: 0.8107, val/total_loss: 0.8107, val/hateful_memes/accuracy: 0.6020, val/hateful_memes/binary_f1: 0.5086, val/hateful_memes/roc_auc: 0.7079, num_updates: 900, epoch: 4, iterations: 900, max_updates: 3000, val_time: 23s 338ms, best_update: 800, best_iteration: 800, best_val/hateful_memes/roc_auc: 0.710944
+2023-04-02T16:45:31 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:45:31 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:45:37 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:45:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:45:47 | mmf.trainers.callbacks.logistics: progress: 1000/3000, train/hateful_memes/cross_entropy: 0.4943, train/hateful_memes/cross_entropy/avg: 0.5407, train/total_loss: 0.4943, train/total_loss/avg: 0.5407, max mem: 8277.0, experiment: run, epoch: 4, num_updates: 1000, iterations: 1000, max_updates: 3000, lr: 0.00003, ups: 0.59, time: 02m 50s 956ms, time_since_start: 33m 02s 678ms, eta: 01h 06m 06s 199ms
+2023-04-02T16:45:47 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:45:47 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:45:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:45:47 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:45:59 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:45:59 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:46:00 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:46:09 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:46:15 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:46:15 | mmf.trainers.callbacks.logistics: progress: 1000/3000, val/hateful_memes/cross_entropy: 0.7451, val/total_loss: 0.7451, val/hateful_memes/accuracy: 0.6220, val/hateful_memes/binary_f1: 0.5215, val/hateful_memes/roc_auc: 0.7104, num_updates: 1000, epoch: 4, iterations: 1000, max_updates: 3000, val_time: 28s 614ms, best_update: 800, best_iteration: 800, best_val/hateful_memes/roc_auc: 0.710944
+2023-04-02T16:48:50 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:48:50 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:48:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:49:03 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:49:03 | mmf.trainers.callbacks.logistics: progress: 1100/3000, train/hateful_memes/cross_entropy: 0.4943, train/hateful_memes/cross_entropy/avg: 0.5209, train/total_loss: 0.4943, train/total_loss/avg: 0.5209, max mem: 8277.0, experiment: run, epoch: 5, num_updates: 1100, iterations: 1100, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 48s 121ms, time_since_start: 36m 19s 522ms, eta: 01h 01m 45s 406ms
+2023-04-02T16:49:03 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:49:03 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:49:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:49:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:49:13 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:49:13 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:49:14 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:49:21 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:49:28 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:49:28 | mmf.trainers.callbacks.logistics: progress: 1100/3000, val/hateful_memes/cross_entropy: 0.9241, val/total_loss: 0.9241, val/hateful_memes/accuracy: 0.6100, val/hateful_memes/binary_f1: 0.5161, val/hateful_memes/roc_auc: 0.6988, num_updates: 1100, epoch: 5, iterations: 1100, max_updates: 3000, val_time: 24s 244ms, best_update: 800, best_iteration: 800, best_val/hateful_memes/roc_auc: 0.710944
+2023-04-02T16:52:04 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:52:04 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:52:10 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:52:16 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:52:16 | mmf.trainers.callbacks.logistics: progress: 1200/3000, train/hateful_memes/cross_entropy: 0.4902, train/hateful_memes/cross_entropy/avg: 0.5121, train/total_loss: 0.4902, train/total_loss/avg: 0.5121, max mem: 8277.0, experiment: run, epoch: 5, num_updates: 1200, iterations: 1200, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 48s 531ms, time_since_start: 39m 32s 302ms, eta: 58m 38s 945ms
+2023-04-02T16:52:16 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:52:16 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:52:16 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:52:16 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:52:27 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:52:27 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:52:28 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:52:34 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T16:52:41 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:52:47 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:52:47 | mmf.trainers.callbacks.logistics: progress: 1200/3000, val/hateful_memes/cross_entropy: 0.8484, val/total_loss: 0.8484, val/hateful_memes/accuracy: 0.6300, val/hateful_memes/binary_f1: 0.5542, val/hateful_memes/roc_auc: 0.7168, num_updates: 1200, epoch: 5, iterations: 1200, max_updates: 3000, val_time: 30s 994ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T16:55:22 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:55:22 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:55:33 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:55:39 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:55:39 | mmf.trainers.callbacks.logistics: progress: 1300/3000, train/hateful_memes/cross_entropy: 0.4902, train/hateful_memes/cross_entropy/avg: 0.4934, train/total_loss: 0.4902, train/total_loss/avg: 0.4934, max mem: 8277.0, experiment: run, epoch: 5, num_updates: 1300, iterations: 1300, max_updates: 3000, lr: 0.00003, ups: 0.58, time: 02m 52s 178ms, time_since_start: 42m 55s 513ms, eta: 56m 35s 351ms
+2023-04-02T16:55:39 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:55:39 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:55:39 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:55:39 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:55:49 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:55:49 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:55:50 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:55:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:56:03 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:56:03 | mmf.trainers.callbacks.logistics: progress: 1300/3000, val/hateful_memes/cross_entropy: 0.8689, val/total_loss: 0.8689, val/hateful_memes/accuracy: 0.5820, val/hateful_memes/binary_f1: 0.3871, val/hateful_memes/roc_auc: 0.7118, num_updates: 1300, epoch: 5, iterations: 1300, max_updates: 3000, val_time: 23s 144ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T16:58:39 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T16:58:39 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:58:45 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:58:51 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:58:51 | mmf.trainers.callbacks.logistics: progress: 1400/3000, train/hateful_memes/cross_entropy: 0.4726, train/hateful_memes/cross_entropy/avg: 0.4646, train/total_loss: 0.4726, train/total_loss/avg: 0.4646, max mem: 8277.0, experiment: run, epoch: 6, num_updates: 1400, iterations: 1400, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 47s 945ms, time_since_start: 46m 06s 607ms, eta: 51m 57s 072ms
+2023-04-02T16:58:51 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T16:58:51 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T16:58:51 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T16:58:51 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T16:59:01 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T16:59:01 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T16:59:02 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T16:59:08 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T16:59:15 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T16:59:15 | mmf.trainers.callbacks.logistics: progress: 1400/3000, val/hateful_memes/cross_entropy: 1.1864, val/total_loss: 1.1864, val/hateful_memes/accuracy: 0.6320, val/hateful_memes/binary_f1: 0.5446, val/hateful_memes/roc_auc: 0.7106, num_updates: 1400, epoch: 6, iterations: 1400, max_updates: 3000, val_time: 24s 107ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:01:51 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:01:51 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:01:57 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:02:03 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:02:03 | mmf.trainers.callbacks.logistics: progress: 1500/3000, train/hateful_memes/cross_entropy: 0.4726, train/hateful_memes/cross_entropy/avg: 0.4518, train/total_loss: 0.4726, train/total_loss/avg: 0.4518, max mem: 8277.0, experiment: run, epoch: 6, num_updates: 1500, iterations: 1500, max_updates: 3000, lr: 0.00004, ups: 0.60, time: 02m 48s 396ms, time_since_start: 49m 19s 114ms, eta: 48m 50s 104ms
+2023-04-02T17:02:03 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:02:03 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:02:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:02:03 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:02:13 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:02:13 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:02:14 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:02:20 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:02:27 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:02:27 | mmf.trainers.callbacks.logistics: progress: 1500/3000, val/hateful_memes/cross_entropy: 1.0294, val/total_loss: 1.0294, val/hateful_memes/accuracy: 0.6540, val/hateful_memes/binary_f1: 0.6095, val/hateful_memes/roc_auc: 0.7162, num_updates: 1500, epoch: 6, iterations: 1500, max_updates: 3000, val_time: 23s 976ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:05:02 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:05:02 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:05:13 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:05:21 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:05:21 | mmf.trainers.callbacks.logistics: progress: 1600/3000, train/hateful_memes/cross_entropy: 0.4153, train/hateful_memes/cross_entropy/avg: 0.4319, train/total_loss: 0.4153, train/total_loss/avg: 0.4319, max mem: 8277.0, experiment: run, epoch: 7, num_updates: 1600, iterations: 1600, max_updates: 3000, lr: 0.00004, ups: 0.58, time: 02m 53s 751ms, time_since_start: 52m 36s 846ms, eta: 47m 01s 724ms
+2023-04-02T17:05:21 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:05:21 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:05:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:05:21 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:05:32 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:05:32 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:05:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:05:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:05:46 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:05:46 | mmf.trainers.callbacks.logistics: progress: 1600/3000, val/hateful_memes/cross_entropy: 1.1977, val/total_loss: 1.1977, val/hateful_memes/accuracy: 0.6100, val/hateful_memes/binary_f1: 0.5013, val/hateful_memes/roc_auc: 0.6839, num_updates: 1600, epoch: 7, iterations: 1600, max_updates: 3000, val_time: 24s 898ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:08:20 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:08:20 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:08:26 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:08:33 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:08:33 | mmf.trainers.callbacks.logistics: progress: 1700/3000, train/hateful_memes/cross_entropy: 0.4153, train/hateful_memes/cross_entropy/avg: 0.4101, train/total_loss: 0.4153, train/total_loss/avg: 0.4101, max mem: 8277.0, experiment: run, epoch: 7, num_updates: 1700, iterations: 1700, max_updates: 3000, lr: 0.00004, ups: 0.60, time: 02m 46s 887ms, time_since_start: 55m 48s 635ms, eta: 41m 56s 665ms
+2023-04-02T17:08:33 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:08:33 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:08:33 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:08:33 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:08:43 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:08:43 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:08:44 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:08:50 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:08:57 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:08:57 | mmf.trainers.callbacks.logistics: progress: 1700/3000, val/hateful_memes/cross_entropy: 1.1692, val/total_loss: 1.1692, val/hateful_memes/accuracy: 0.6320, val/hateful_memes/binary_f1: 0.5856, val/hateful_memes/roc_auc: 0.7047, num_updates: 1700, epoch: 7, iterations: 1700, max_updates: 3000, val_time: 24s 213ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:11:32 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:11:32 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:11:39 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:11:45 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:11:45 | mmf.trainers.callbacks.logistics: progress: 1800/3000, train/hateful_memes/cross_entropy: 0.4099, train/hateful_memes/cross_entropy/avg: 0.3985, train/total_loss: 0.4099, train/total_loss/avg: 0.3985, max mem: 8277.0, experiment: run, epoch: 7, num_updates: 1800, iterations: 1800, max_updates: 3000, lr: 0.00005, ups: 0.60, time: 02m 48s 218ms, time_since_start: 59m 01s 090ms, eta: 39m 01s 600ms
+2023-04-02T17:11:45 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:11:45 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:11:45 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:11:45 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:11:56 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:11:56 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:11:56 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:12:03 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:12:11 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:12:11 | mmf.trainers.callbacks.logistics: progress: 1800/3000, val/hateful_memes/cross_entropy: 1.2024, val/total_loss: 1.2024, val/hateful_memes/accuracy: 0.6200, val/hateful_memes/binary_f1: 0.5153, val/hateful_memes/roc_auc: 0.6992, num_updates: 1800, epoch: 7, iterations: 1800, max_updates: 3000, val_time: 25s 574ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:14:46 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:14:46 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:14:55 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:15:01 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:15:01 | mmf.trainers.callbacks.logistics: progress: 1900/3000, train/hateful_memes/cross_entropy: 0.4099, train/hateful_memes/cross_entropy/avg: 0.3820, train/total_loss: 0.4099, train/total_loss/avg: 0.3820, max mem: 8277.0, experiment: run, epoch: 8, num_updates: 1900, iterations: 1900, max_updates: 3000, lr: 0.00005, ups: 0.59, time: 02m 50s 677ms, time_since_start: 01h 02m 17s 352ms, eta: 36m 17s 843ms
+2023-04-02T17:15:01 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:15:01 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:15:01 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:15:01 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:15:11 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:15:11 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:15:12 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:15:19 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:15:25 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:15:25 | mmf.trainers.callbacks.logistics: progress: 1900/3000, val/hateful_memes/cross_entropy: 1.5140, val/total_loss: 1.5140, val/hateful_memes/accuracy: 0.6040, val/hateful_memes/binary_f1: 0.4530, val/hateful_memes/roc_auc: 0.7061, num_updates: 1900, epoch: 8, iterations: 1900, max_updates: 3000, val_time: 23s 346ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:18:00 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:18:00 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:18:06 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:18:12 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:18:12 | mmf.trainers.callbacks.logistics: progress: 2000/3000, train/hateful_memes/cross_entropy: 0.3234, train/hateful_memes/cross_entropy/avg: 0.3749, train/total_loss: 0.3234, train/total_loss/avg: 0.3749, max mem: 8277.0, experiment: run, epoch: 8, num_updates: 2000, iterations: 2000, max_updates: 3000, lr: 0.00005, ups: 0.60, time: 02m 47s 026ms, time_since_start: 01h 05m 27s 734ms, eta: 32m 17s 511ms
+2023-04-02T17:18:12 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:18:12 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:18:12 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:18:12 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:18:22 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:18:22 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:18:23 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:18:29 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:18:36 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:18:36 | mmf.trainers.callbacks.logistics: progress: 2000/3000, val/hateful_memes/cross_entropy: 1.0488, val/total_loss: 1.0488, val/hateful_memes/accuracy: 0.6520, val/hateful_memes/binary_f1: 0.6250, val/hateful_memes/roc_auc: 0.7100, num_updates: 2000, epoch: 8, iterations: 2000, max_updates: 3000, val_time: 23s 921ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:21:10 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:21:10 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:21:16 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:21:23 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:21:23 | mmf.trainers.callbacks.logistics: progress: 2100/3000, train/hateful_memes/cross_entropy: 0.3082, train/hateful_memes/cross_entropy/avg: 0.3614, train/total_loss: 0.3082, train/total_loss/avg: 0.3614, max mem: 8277.0, experiment: run, epoch: 8, num_updates: 2100, iterations: 2100, max_updates: 3000, lr: 0.00005, ups: 0.60, time: 02m 47s 175ms, time_since_start: 01h 08m 38s 833ms, eta: 29m 05s 308ms
+2023-04-02T17:21:23 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:21:23 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:21:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:21:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:21:33 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:21:33 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:21:34 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:21:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:21:48 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:21:48 | mmf.trainers.callbacks.logistics: progress: 2100/3000, val/hateful_memes/cross_entropy: 1.2062, val/total_loss: 1.2062, val/hateful_memes/accuracy: 0.6080, val/hateful_memes/binary_f1: 0.5051, val/hateful_memes/roc_auc: 0.7000, num_updates: 2100, epoch: 8, iterations: 2100, max_updates: 3000, val_time: 25s 244ms, best_update: 1200, best_iteration: 1200, best_val/hateful_memes/roc_auc: 0.716784
+2023-04-02T17:24:22 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:24:22 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:24:32 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:24:38 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:24:38 | mmf.trainers.callbacks.logistics: progress: 2200/3000, train/hateful_memes/cross_entropy: 0.2722, train/hateful_memes/cross_entropy/avg: 0.3548, train/total_loss: 0.2722, train/total_loss/avg: 0.3548, max mem: 8277.0, experiment: run, epoch: 9, num_updates: 2200, iterations: 2200, max_updates: 3000, lr: 0.00004, ups: 0.59, time: 02m 49s 790ms, time_since_start: 01h 11m 53s 872ms, eta: 26m 15s 655ms
+2023-04-02T17:24:38 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:24:38 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:24:38 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:24:38 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:24:48 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:24:48 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:24:48 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:24:55 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T17:25:01 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:25:07 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:25:07 | mmf.trainers.callbacks.logistics: progress: 2200/3000, val/hateful_memes/cross_entropy: 1.2957, val/total_loss: 1.2957, val/hateful_memes/accuracy: 0.6420, val/hateful_memes/binary_f1: 0.5375, val/hateful_memes/roc_auc: 0.7177, num_updates: 2200, epoch: 9, iterations: 2200, max_updates: 3000, val_time: 29s 261ms, best_update: 2200, best_iteration: 2200, best_val/hateful_memes/roc_auc: 0.717744
+2023-04-02T17:27:42 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:27:42 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:27:49 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:27:54 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:27:54 | mmf.trainers.callbacks.logistics: progress: 2300/3000, train/hateful_memes/cross_entropy: 0.2684, train/hateful_memes/cross_entropy/avg: 0.3416, train/total_loss: 0.2684, train/total_loss/avg: 0.3416, max mem: 8277.0, experiment: run, epoch: 9, num_updates: 2300, iterations: 2300, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 47s 227ms, time_since_start: 01h 15m 10s 364ms, eta: 22m 37s 885ms
+2023-04-02T17:27:54 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:27:54 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:27:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:27:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:28:05 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:28:05 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:28:06 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:28:12 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:28:18 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:28:18 | mmf.trainers.callbacks.logistics: progress: 2300/3000, val/hateful_memes/cross_entropy: 1.5325, val/total_loss: 1.5325, val/hateful_memes/accuracy: 0.6500, val/hateful_memes/binary_f1: 0.5283, val/hateful_memes/roc_auc: 0.7147, num_updates: 2300, epoch: 9, iterations: 2300, max_updates: 3000, val_time: 23s 939ms, best_update: 2200, best_iteration: 2200, best_val/hateful_memes/roc_auc: 0.717744
+2023-04-02T17:30:53 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:30:53 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:31:00 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:31:07 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:31:07 | mmf.trainers.callbacks.logistics: progress: 2400/3000, train/hateful_memes/cross_entropy: 0.2391, train/hateful_memes/cross_entropy/avg: 0.3277, train/total_loss: 0.2391, train/total_loss/avg: 0.3277, max mem: 8277.0, experiment: run, epoch: 10, num_updates: 2400, iterations: 2400, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 48s 370ms, time_since_start: 01h 18m 22s 677ms, eta: 19m 31s 856ms
+2023-04-02T17:31:07 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:31:07 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:31:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:31:07 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:31:17 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:31:17 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:31:18 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:31:24 | mmf.utils.checkpoint: Saving best checkpoint
+2023-04-02T17:31:34 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:31:42 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:31:42 | mmf.trainers.callbacks.logistics: progress: 2400/3000, val/hateful_memes/cross_entropy: 1.3719, val/total_loss: 1.3719, val/hateful_memes/accuracy: 0.6500, val/hateful_memes/binary_f1: 0.5478, val/hateful_memes/roc_auc: 0.7297, num_updates: 2400, epoch: 10, iterations: 2400, max_updates: 3000, val_time: 35s 216ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:34:17 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:34:17 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:34:23 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:34:29 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:34:29 | mmf.trainers.callbacks.logistics: progress: 2500/3000, train/hateful_memes/cross_entropy: 0.2150, train/hateful_memes/cross_entropy/avg: 0.3193, train/total_loss: 0.2150, train/total_loss/avg: 0.3193, max mem: 8277.0, experiment: run, epoch: 10, num_updates: 2500, iterations: 2500, max_updates: 3000, lr: 0.00003, ups: 0.60, time: 02m 47s 261ms, time_since_start: 01h 21m 45s 158ms, eta: 16m 10s 116ms
+2023-04-02T17:34:29 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:34:29 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:34:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:34:29 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:34:39 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:34:39 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:34:40 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:34:46 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:34:53 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:34:53 | mmf.trainers.callbacks.logistics: progress: 2500/3000, val/hateful_memes/cross_entropy: 1.4370, val/total_loss: 1.4370, val/hateful_memes/accuracy: 0.6500, val/hateful_memes/binary_f1: 0.5783, val/hateful_memes/roc_auc: 0.7258, num_updates: 2500, epoch: 10, iterations: 2500, max_updates: 3000, val_time: 23s 478ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:37:27 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:37:27 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:37:34 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:37:42 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:37:42 | mmf.trainers.callbacks.logistics: progress: 2600/3000, train/hateful_memes/cross_entropy: 0.2021, train/hateful_memes/cross_entropy/avg: 0.3075, train/total_loss: 0.2021, train/total_loss/avg: 0.3075, max mem: 8277.0, experiment: run, epoch: 10, num_updates: 2600, iterations: 2600, max_updates: 3000, lr: 0.00002, ups: 0.59, time: 02m 49s 059ms, time_since_start: 01h 24m 57s 699ms, eta: 13m 04s 437ms
+2023-04-02T17:37:42 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:37:42 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:37:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:37:42 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:37:52 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:37:52 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:37:53 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:37:59 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:38:05 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:38:05 | mmf.trainers.callbacks.logistics: progress: 2600/3000, val/hateful_memes/cross_entropy: 1.6434, val/total_loss: 1.6434, val/hateful_memes/accuracy: 0.6560, val/hateful_memes/binary_f1: 0.5612, val/hateful_memes/roc_auc: 0.7212, num_updates: 2600, epoch: 10, iterations: 2600, max_updates: 3000, val_time: 23s 763ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:40:41 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:40:41 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:40:48 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:40:54 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:40:54 | mmf.trainers.callbacks.logistics: progress: 2700/3000, train/hateful_memes/cross_entropy: 0.1327, train/hateful_memes/cross_entropy/avg: 0.2994, train/total_loss: 0.1327, train/total_loss/avg: 0.2994, max mem: 8277.0, experiment: run, epoch: 11, num_updates: 2700, iterations: 2700, max_updates: 3000, lr: 0.00002, ups: 0.60, time: 02m 48s 496ms, time_since_start: 01h 28m 09s 963ms, eta: 09m 46s 368ms
+2023-04-02T17:40:54 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:40:54 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:40:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:40:54 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:41:04 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:41:04 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:41:05 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:41:17 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:41:25 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:41:25 | mmf.trainers.callbacks.logistics: progress: 2700/3000, val/hateful_memes/cross_entropy: 1.6917, val/total_loss: 1.6917, val/hateful_memes/accuracy: 0.6520, val/hateful_memes/binary_f1: 0.5628, val/hateful_memes/roc_auc: 0.7233, num_updates: 2700, epoch: 11, iterations: 2700, max_updates: 3000, val_time: 30s 846ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:43:58 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:43:58 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:44:05 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:44:10 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:44:10 | mmf.trainers.callbacks.logistics: progress: 2800/3000, train/hateful_memes/cross_entropy: 0.1190, train/hateful_memes/cross_entropy/avg: 0.2891, train/total_loss: 0.1190, train/total_loss/avg: 0.2891, max mem: 8277.0, experiment: run, epoch: 11, num_updates: 2800, iterations: 2800, max_updates: 3000, lr: 0.00001, ups: 0.61, time: 02m 45s 627ms, time_since_start: 01h 31m 26s 447ms, eta: 06m 24s 256ms
+2023-04-02T17:44:10 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:44:10 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:44:10 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:44:10 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:44:20 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:44:20 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:44:21 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:44:27 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:44:34 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:44:34 | mmf.trainers.callbacks.logistics: progress: 2800/3000, val/hateful_memes/cross_entropy: 1.6831, val/total_loss: 1.6831, val/hateful_memes/accuracy: 0.6480, val/hateful_memes/binary_f1: 0.5487, val/hateful_memes/roc_auc: 0.7189, num_updates: 2800, epoch: 11, iterations: 2800, max_updates: 3000, val_time: 23s 653ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:47:10 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:47:10 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:47:17 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:47:23 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:47:23 | mmf.trainers.callbacks.logistics: progress: 2900/3000, train/hateful_memes/cross_entropy: 0.1190, train/hateful_memes/cross_entropy/avg: 0.2852, train/total_loss: 0.1190, train/total_loss/avg: 0.2852, max mem: 8277.0, experiment: run, epoch: 11, num_updates: 2900, iterations: 2900, max_updates: 3000, lr: 0.00001, ups: 0.60, time: 02m 48s 992ms, time_since_start: 01h 34m 39s 095ms, eta: 03m 16s 031ms
+2023-04-02T17:47:23 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:47:23 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:47:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:47:23 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:47:33 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:47:33 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:47:33 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:47:40 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:47:46 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:47:46 | mmf.trainers.callbacks.logistics: progress: 2900/3000, val/hateful_memes/cross_entropy: 1.9122, val/total_loss: 1.9122, val/hateful_memes/accuracy: 0.6420, val/hateful_memes/binary_f1: 0.5302, val/hateful_memes/roc_auc: 0.7185, num_updates: 2900, epoch: 11, iterations: 2900, max_updates: 3000, val_time: 22s 489ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:50:20 | mmf.trainers.callbacks.checkpoint: Checkpoint time. Saving a checkpoint.
+2023-04-02T17:50:20 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:50:27 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:50:34 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:50:34 | mmf.trainers.callbacks.logistics: progress: 3000/3000, train/hateful_memes/cross_entropy: 0.0926, train/hateful_memes/cross_entropy/avg: 0.2782, train/total_loss: 0.0926, train/total_loss/avg: 0.2782, max mem: 8277.0, experiment: run, epoch: 12, num_updates: 3000, iterations: 3000, max_updates: 3000, lr: 0., ups: 0.60, time: 02m 48s 456ms, time_since_start: 01h 37m 50s 045ms, eta: 0ms
+2023-04-02T17:50:34 | mmf.trainers.core.training_loop: Evaluation time. Running on full validation set...
+2023-04-02T17:50:34 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:50:34 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:50:34 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+2023-04-02T17:50:46 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:50:46 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:50:47 | mmf.utils.checkpoint: Checkpoint save operation started!
+2023-04-02T17:50:56 | mmf.utils.checkpoint: Saving current checkpoint
+2023-04-02T17:51:02 | mmf.utils.checkpoint: Checkpoint save operation finished!
+2023-04-02T17:51:02 | mmf.trainers.callbacks.logistics: progress: 3000/3000, val/hateful_memes/cross_entropy: 1.9580, val/total_loss: 1.9580, val/hateful_memes/accuracy: 0.6440, val/hateful_memes/binary_f1: 0.5291, val/hateful_memes/roc_auc: 0.7201, num_updates: 3000, epoch: 12, iterations: 3000, max_updates: 3000, val_time: 28s 348ms, best_update: 2400, best_iteration: 2400, best_val/hateful_memes/roc_auc: 0.729744
+2023-04-02T17:51:03 | mmf.trainers.core.training_loop: Stepping into final validation check
+2023-04-02T17:51:03 | mmf.utils.checkpoint: Restoring checkpoint
+2023-04-02T17:51:03 | mmf.utils.checkpoint: Loading checkpoint
+2023-04-02T17:51:11 | mmf.utils.checkpoint: Checkpoint loaded.
+2023-04-02T17:51:11 | mmf.utils.checkpoint: Current num updates: 2400
+2023-04-02T17:51:11 | mmf.utils.checkpoint: Current iteration: 2400
+2023-04-02T17:51:11 | mmf.utils.checkpoint: Current epoch: 10
+2023-04-02T17:51:12 | mmf.trainers.mmf_trainer: Starting inference on val set
+2023-04-02T17:51:12 | mmf.common.test_reporter: Predicting for hateful_memes
+WARNING 2023-04-02T17:51:12 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+WARNING 2023-04-02T17:51:12 | py.warnings: /usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+
+100% 16/16 [00:10<00:00,  1.53it/s]
+2023-04-02T17:51:23 | mmf.trainers.core.evaluation_loop: Finished evaluation inference. Loaded 16
+2023-04-02T17:51:23 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2023-04-02T17:51:24 | mmf.trainers.callbacks.logistics: progress: 2400/3000, val/hateful_memes/cross_entropy: 1.3719, val/total_loss: 1.3719, val/hateful_memes/accuracy: 0.6500, val/hateful_memes/binary_f1: 0.5478, val/hateful_memes/roc_auc: 0.7297
+2023-04-02T17:51:24 | mmf.trainers.callbacks.logistics: Finished run in 01h 38m 39s 730ms
